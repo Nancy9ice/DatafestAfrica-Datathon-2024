@@ -57,7 +57,7 @@ jobs:
       - name: Install dbt-core and dependencies
         run: |
           pip install dbt-core
-          dbt deps --project-dir $GITHUB_WORKSPACE/project-repo/dbt_data_baddies_datafest
+          dbt deps --project-dir $GITHUB_WORKSPACE/project-repo/datafest_datathon/dbt_data_baddies_datafest
           
       - name: Python Executable Deploy
         if: steps.prerun.outputs.result == 'pex-deploy'
