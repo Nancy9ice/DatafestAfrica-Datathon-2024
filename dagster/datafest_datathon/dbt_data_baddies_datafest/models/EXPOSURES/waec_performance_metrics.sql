@@ -31,7 +31,9 @@ ORDER BY student_course_id
 )
 
 SELECT
+    students.student_course_id
     students.student_id,
+    courses.course_id,
     students.full_name AS student_name,
     students.department,
     students.gender,
@@ -97,7 +99,9 @@ LEFT JOIN {{ ref('stg_waec_grades') }} waec_grades
 LEFT JOIN {{ ref('stg_attendance') }} attendance
     ON students_courses.student_course_id = attendance.student_course_id
 GROUP BY 
+    students.student_course_id
     students.student_id,
+    courses.course_id,
     students.full_name,
     students.department,
     students.gender,
