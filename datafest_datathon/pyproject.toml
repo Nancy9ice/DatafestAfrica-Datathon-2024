@@ -3,4 +3,5 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [tool.dagster]
-module_name = "datafest_datathon"
+module_name = "datafest_datathon.definitions"
+code_location_name = "datafest_datathon"
