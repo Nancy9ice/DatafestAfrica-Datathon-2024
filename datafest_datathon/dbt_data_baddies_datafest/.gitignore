@@ -1,4 +1,7 @@
+# Ignore everything in the target directory
+target/*
 
-target/
+# Except for manifest.json
+!target/manifest.json
 dbt_packages/
 logs/
