@@ -1,0 +1,4 @@
+locations:
+- code_source:
+    package_name: datafest_datathon
+  location_name: datafest_datathon
