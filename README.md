@@ -1,47 +1,73 @@
-# datafest_datathon
+# DatafestAfrica Datathon 2024
 
-This is a [Dagster](https://dagster.io/) project scaffolded with [`dagster project scaffold`](https://docs.dagster.io/getting-started/create-new-project).
+This is a project built by the Data Baddies team (Olaminike Olaiya and Nancy Amandi) for the DatafestAfrica Datathon 2024. This project aimed to solve the problem of a secondary school as regards predicting the scores of their future exams. The scope of the project and the tools involved includes:
 
-## Getting started
+- Data Gathering: Rosariosis Software and MySQL database
 
-First, install your Dagster code location as a Python package. By using the --editable flag, pip will install your Python package in ["editable mode"](https://pip.pypa.io/en/latest/topics/local-project-installs/#editable-installs) so that as you develop, local code changes will automatically apply.
+- Data Ingestion: Airbyte
+
+- Data Storage: Snowflake
+
+- Data Preparation and Modeling: dbt
+
+- Machine Learning: Python
+
+- Reporting and Visualization: PowerBI
+
+- Pipeline Orchestration: Dagster
+
+This Github project contains codes on dbt, Dagster and Python (machine learning). 
+
+The dbt and machine learning projects are wrapped in the dagster orchestration code.
+
+## How to Build this Project
+
+Clone the github project
+
+```bash
+git clone https://github.com/Nancy9ice/DatafestAfrica-Datathon-2024.git
+```
+
+You can choose to build this project in Dagster Cloud or Dagster CLI. 
+
+## Building the project on Dagster Cloud.
+
+To build the project on dagster cloud, do the following:
+
+- Push the cloned repo to your github
+
+- Create the required environment variables in your Dagster Cloud UI
+
+- Add the repo as your Dagster cloud location
+
+- Launch the dagster run
+
+## Building the project on Dagster CLI
+
+To build the project in the Dagster CLI, do the following after cloning the github repo:
+
+- Create a virtual environment
+
+```bash
+python -m venv venv_name
+```
+
+- Activate the virtual environment
+
+- Install the project requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+- Build the project module
 
 ```bash
 pip install -e ".[dev]"
 ```
 
-Then, start the Dagster UI web server:
+- Launch your Dagster environment
 
 ```bash
-dagster dev
+dagster dev -w workspace.yaml
 ```
-
-Open http://localhost:3000 with your browser to see the project.
-
-You can start writing assets in `datafest_datathon/assets.py`. The assets are automatically loaded into the Dagster code location as you define them.
-
-## Development
-
-### Adding new Python dependencies
-
-You can specify new Python dependencies in `setup.py`.
-
-### Unit testing
-
-Tests are in the `datafest_datathon_tests` directory and you can run tests using `pytest`:
-
-```bash
-pytest datafest_datathon_tests
-```
-
-### Schedules and sensors
-
-If you want to enable Dagster [Schedules](https://docs.dagster.io/concepts/partitions-schedules-sensors/schedules) or [Sensors](https://docs.dagster.io/concepts/partitions-schedules-sensors/sensors) for your jobs, the [Dagster Daemon](https://docs.dagster.io/deployment/dagster-daemon) process must be running. This is done automatically when you run `dagster dev`.
-
-Once your Dagster Daemon is running, you can start turning on schedules and sensors for your jobs.
-
-## Deploy on Dagster Cloud
-
-The easiest way to deploy your Dagster project is to use Dagster Cloud.
-
-Check out the [Dagster Cloud Documentation](https://docs.dagster.cloud) to learn more.

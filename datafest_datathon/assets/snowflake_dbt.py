@@ -1,5 +1,4 @@
-from dagster import AssetExecutionContext, asset
-from dagster_airbyte import build_airbyte_assets
+from dagster import AssetExecutionContext
 from dagster_dbt import DbtCliResource, dbt_assets
 from datafest_datathon.constants import DBT_PROJECT_DIR
 import os
