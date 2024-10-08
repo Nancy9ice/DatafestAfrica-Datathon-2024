@@ -2,32 +2,31 @@ data_baddies_datafest:
   target: RAW
   outputs:
     RAW:
-      account: ya78182.eu-west-2.aws
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       database: DATAFESTAFRICA
-      password: '@Databaddies2_'
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
       role: ACCOUNTADMIN
       schema: RAW
       threads: 1
       type: snowflake
-      user: databaddies2024
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
       warehouse: COMPUTE_WH
     INTERMEDIATE:
-      account: ya78182.eu-west-2.aws
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       database: DATAFESTAFRICA
-      password: '@Databaddies2_'
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
       role: ACCOUNTADMIN
       schema: INTERMEDIATE
       threads: 1
       type: snowflake
-      user: databaddies2024
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
       warehouse: COMPUTE_WH
     CORE:
-      account: ya78182.eu-west-2.aws
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       database: DATAFESTAFRICA
-      password: '@Databaddies2_'
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
       role: ACCOUNTADMIN
       schema: CORE
       threads: 1
-      type: snowflake
-      user: databaddies2024
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
       warehouse: COMPUTE_WH
