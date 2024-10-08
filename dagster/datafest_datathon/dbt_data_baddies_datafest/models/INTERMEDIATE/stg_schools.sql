@@ -1,0 +1,21 @@
+SELECT DISTINCT
+    id as school_id,
+    CAST(syear AS INT) as session_year,
+    title as school_name,
+    address as school_address,
+    city,
+    state,
+    zipcode,
+    phone,
+    principal,
+    www_address as website_url,
+    school_number as school_phone_number,
+    short_name,
+    reporting_gp_scale,
+    grading_scale,
+    sort_order,
+    created_at as school_created_at,
+    TO_CHAR(CAST(created_at AS DATE), 'YYYYMMDD') AS school_created_date_id,
+    updated_at as school_updated_at,
+    TO_CHAR(CAST(updated_at AS DATE), 'YYYYMMDD') AS school_updated_date_id
+FROM {{ source('data_baddies_datafest', 'raw_schools') }}
