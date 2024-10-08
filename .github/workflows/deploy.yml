@@ -41,6 +41,12 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           path: project-repo
+
+      # Add the lines to install dbt-core and run dbt deps
+      - name: Install dbt-core and dependencies
+        run: |
+          pip install dbt-core
+          dbt deps --project-dir $GITHUB_WORKSPACE/project-repo/dbt_project
           
       - name: Python Executable Deploy
         if: steps.prerun.outputs.result == 'pex-deploy'
@@ -77,4 +83,3 @@ jobs:
           organization_id: ${{ secrets.ORGANIZATION_ID }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
