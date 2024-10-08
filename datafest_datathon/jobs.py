@@ -10,5 +10,5 @@ airbyte_dbt_sync_job = define_asset_job(
     "airbyte_mysql_to_snowflake_to_dbt",
     AssetSelection.assets(my_dbt_assets)
     .upstream()
-    .required_multi_asset_neighbors(),  # Include all Airbyte assets linked to the same connection
-)
+    .required_multi_asset_neighbors(),  # all Airbyte assets linked to the same connection
+    )
