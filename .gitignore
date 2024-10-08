@@ -1,8 +1,0 @@
-**/*.pyc
-**/datafest_venv/*
-**/logs/*
-.DS_Store
-tmpv8byy91_/
-tmpzt920w1c/
-**.env
-**/__pycache__/

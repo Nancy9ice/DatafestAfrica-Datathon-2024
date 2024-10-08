@@ -1,8 +1,0 @@
-pyproject.toml
-setup.cfg
-setup.py
-datafest_datathon.egg-info/PKG-INFO
-datafest_datathon.egg-info/SOURCES.txt
-datafest_datathon.egg-info/dependency_links.txt
-datafest_datathon.egg-info/requires.txt
-datafest_datathon.egg-info/top_level.txt
