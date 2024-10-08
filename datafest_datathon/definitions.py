@@ -8,7 +8,7 @@ from datafest_datathon.schedules import daily_airbyte_dbt_schedule  # Import you
 
 # Define the Dagster repository
 defs = Definitions(
-    assets=airbyte_assets + [my_dbt_assets],  # Combine Airbyte and dbt assets
+    assets=[airbyte_assets] + [my_dbt_assets],  # Combine Airbyte and dbt assets
     schedules=[daily_airbyte_dbt_schedule],  # Add schedule
     resources={"airbyte": airbyte_instance, "dbt": dbt_resource},
     jobs=[airbyte_dbt_sync_job]
