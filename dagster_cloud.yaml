@@ -1,4 +1,0 @@
-locations:
-  - location_name: datafest_datathon
-    code_source:
-      module_name: datafest_datathon.definitions
