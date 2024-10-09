@@ -3,7 +3,6 @@ from dagster import (
     AssetSelection,
 )
 from datafest_datathon.assets.snowflake_dbt import my_dbt_assets
-from datafest_datathon.assets.airbyte_instance import airbyte_assets  # Import Airbyte assets if needed
 
 # Define job to run Airbyte sync and dbt build
 airbyte_dbt_sync_job = define_asset_job(

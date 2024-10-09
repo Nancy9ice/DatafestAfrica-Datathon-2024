@@ -1,0 +1,1363 @@
+2024-10-09 02:50:26,600 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 31073
+2024-10-09 02:50:26,612 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 31061
+2024-10-09 02:51:33,852 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 31201
+2024-10-09 02:52:06,972 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 02:52:06,983 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 31061
+2024-10-09 02:52:40,771 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 31296
+2024-10-09 02:53:13,899 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 02:53:13,907 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 31201
+2024-10-09 02:53:48,088 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 31335
+2024-10-09 02:54:20,882 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 02:54:20,887 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 31296
+2024-10-09 02:54:55,969 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 31357
+2024-10-09 02:55:28,445 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 02:55:31,448 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 31335
+2024-10-09 02:55:55,583 - INFO - Code server was interrupted
+2024-10-09 02:55:55,587 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 31357
+2024-10-09 02:55:55,583 - INFO - Code server was interrupted
+2024-10-09 02:55:55,588 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 31073
+2024-10-09 03:15:56,139 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 255, in __init__
+    loadable_targets = get_loadable_targets(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/utils.py", line 60, in get_loadable_targets
+    else loadable_targets_from_python_package(package_name, working_directory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/workspace/autodiscovery.py", line 44, in loadable_targets_from_python_package
+    module = load_python_module(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 134, in load_python_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/definitions.py", line 7, in <module>
+    from datafest_datathon.ml_jobs import waec_pipeline, jamb_pipeline
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py", line 22, in <module>
+    @graph
+     ^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/graph_decorator.py", line 194, in graph
+    return _Graph()(compose_fn)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/graph_decorator.py", line 78, in __call__
+    ) = do_composition(
+        ^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/composition.py", line 949, in do_composition
+    output = fn(**kwargs)
+             ^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py", line 25, in data_pipeline_graph
+    predicted_waec_results = waec_pipeline()
+                             ^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/job_definition.py", line 631, in __call__
+    raise DagsterInvariantViolationError(
+dagster._core.errors.DagsterInvariantViolationError: Attempted to call job 'waec_pipeline' directly. Jobs should be invoked by using an execution API function (e.g. `job.execute_in_process`).
+2024-10-09 03:15:56,139 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 255, in __init__
+    loadable_targets = get_loadable_targets(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/utils.py", line 60, in get_loadable_targets
+    else loadable_targets_from_python_package(package_name, working_directory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/workspace/autodiscovery.py", line 44, in loadable_targets_from_python_package
+    module = load_python_module(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 134, in load_python_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/definitions.py", line 7, in <module>
+    from datafest_datathon.ml_jobs import waec_pipeline, jamb_pipeline
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py", line 22, in <module>
+    @graph
+     ^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/graph_decorator.py", line 194, in graph
+    return _Graph()(compose_fn)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/graph_decorator.py", line 78, in __call__
+    ) = do_composition(
+        ^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/composition.py", line 949, in do_composition
+    output = fn(**kwargs)
+             ^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py", line 25, in data_pipeline_graph
+    predicted_waec_results = waec_pipeline()
+                             ^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/job_definition.py", line 631, in __call__
+    raise DagsterInvariantViolationError(
+dagster._core.errors.DagsterInvariantViolationError: Attempted to call job 'waec_pipeline' directly. Jobs should be invoked by using an execution API function (e.g. `job.execute_in_process`).
+2024-10-09 03:15:56,159 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 31995
+2024-10-09 03:15:56,159 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 31992
+2024-10-09 03:16:05,187 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:16:05,187 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:16:05,188 - INFO - Code server was interrupted
+2024-10-09 03:16:05,189 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 31992
+2024-10-09 03:16:05,225 - INFO - Code server was interrupted
+2024-10-09 03:16:05,225 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 31995
+2024-10-09 03:19:29,257 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 134, in load_python_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/definitions.py", line 7, in <module>
+    from datafest_datathon.ml_jobs import waec_pipeline, jamb_pipeline
+ImportError: cannot import name 'waec_pipeline' from 'datafest_datathon.ml_jobs' (/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 255, in __init__
+    loadable_targets = get_loadable_targets(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/utils.py", line 60, in get_loadable_targets
+    else loadable_targets_from_python_package(package_name, working_directory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/workspace/autodiscovery.py", line 44, in loadable_targets_from_python_package
+    module = load_python_module(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 139, in load_python_module
+    raise DagsterImportError(
+dagster._core.errors.DagsterImportError: Encountered ImportError: `cannot import name 'waec_pipeline' from 'datafest_datathon.ml_jobs' (/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py)` while importing module datafest_datathon.definitions. Local modules were resolved using the working directory `/Users/nancyamandi/datafest_datathon_2024`. If another working directory should be used, please explicitly specify the appropriate path using the `-d` or `--working-directory` for CLI based targets or the `working_directory` configuration option for workspace targets. 
+2024-10-09 03:19:29,405 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 134, in load_python_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/definitions.py", line 7, in <module>
+    from datafest_datathon.ml_jobs import waec_pipeline, jamb_pipeline
+ImportError: cannot import name 'waec_pipeline' from 'datafest_datathon.ml_jobs' (/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 255, in __init__
+    loadable_targets = get_loadable_targets(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/utils.py", line 60, in get_loadable_targets
+    else loadable_targets_from_python_package(package_name, working_directory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/workspace/autodiscovery.py", line 44, in loadable_targets_from_python_package
+    module = load_python_module(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 139, in load_python_module
+    raise DagsterImportError(
+dagster._core.errors.DagsterImportError: Encountered ImportError: `cannot import name 'waec_pipeline' from 'datafest_datathon.ml_jobs' (/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py)` while importing module datafest_datathon.definitions. Local modules were resolved using the working directory `/Users/nancyamandi/datafest_datathon_2024`. If another working directory should be used, please explicitly specify the appropriate path using the `-d` or `--working-directory` for CLI based targets or the `working_directory` configuration option for workspace targets. 
+2024-10-09 03:19:29,419 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 32168
+2024-10-09 03:19:29,423 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 32171
+2024-10-09 03:19:36,800 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:19:36,804 - INFO - Code server was interrupted
+2024-10-09 03:19:36,804 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 32171
+2024-10-09 03:19:36,904 - INFO - Code server was interrupted
+2024-10-09 03:19:36,904 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 32168
+2024-10-09 03:24:07,346 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 32534
+2024-10-09 03:24:07,401 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 32533
+2024-10-09 03:24:31,583 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:24:31,717 - INFO - Code server was interrupted
+2024-10-09 03:24:31,718 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 32533
+2024-10-09 03:24:31,718 - INFO - Code server was interrupted
+2024-10-09 03:24:31,718 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 32534
+2024-10-09 03:29:10,666 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 32784
+2024-10-09 03:29:10,666 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 32783
+2024-10-09 03:30:19,785 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 32878
+2024-10-09 03:30:43,398 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:30:43,418 - INFO - Code server was interrupted
+2024-10-09 03:30:43,418 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 32878
+2024-10-09 03:30:43,422 - INFO - Code server was interrupted
+2024-10-09 03:30:43,422 - INFO - Code server was interrupted
+2024-10-09 03:30:43,424 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 32783
+2024-10-09 03:30:43,424 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 32784
+2024-10-09 03:30:56,594 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 32976
+2024-10-09 03:30:56,594 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 32975
+2024-10-09 03:32:10,928 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 33035
+2024-10-09 03:32:37,061 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:32:37,069 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 32975
+2024-10-09 03:32:38,067 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:32:38,068 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:32:38,073 - INFO - Code server was interrupted
+2024-10-09 03:32:38,073 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 32976
+2024-10-09 03:32:38,228 - INFO - Code server was interrupted
+2024-10-09 03:32:38,228 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 33035
+2024-10-09 03:33:22,698 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 33145
+2024-10-09 03:33:22,698 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 33146
+2024-10-09 03:34:30,670 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 33230
+2024-10-09 03:35:03,198 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:35:03,206 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 33145
+2024-10-09 03:35:37,908 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 33385
+2024-10-09 03:36:10,708 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:36:10,711 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 33230
+2024-10-09 03:36:45,534 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 33523
+2024-10-09 03:37:18,382 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:37:21,388 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 33385
+2024-10-09 03:37:52,674 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 33645
+2024-10-09 03:38:25,557 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:38:25,560 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 33523
+2024-10-09 03:38:59,927 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 33768
+2024-10-09 03:39:32,730 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:39:32,737 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 33645
+2024-10-09 03:40:07,086 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 33859
+2024-10-09 03:40:39,974 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:40:39,977 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 33768
+2024-10-09 03:41:14,559 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 33889
+2024-10-09 03:41:47,102 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:41:47,104 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 33859
+2024-10-09 03:41:58,999 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:41:59,005 - INFO - Code server was interrupted
+2024-10-09 03:41:59,005 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 33146
+2024-10-09 03:41:59,188 - INFO - Code server was interrupted
+2024-10-09 03:41:59,189 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 33889
+2024-10-09 03:42:11,545 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 134, in load_python_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/definitions.py", line 7, in <module>
+    from datafest_datathon.ml_jobs import waec_pipeline, jamb_pipeline
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py", line 2, in <module>
+    from datafest_datathon.assets.ml_assets import (
+ImportError: cannot import name 'prepare_data' from 'datafest_datathon.assets.ml_assets' (/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/assets/ml_assets.py)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 255, in __init__
+    loadable_targets = get_loadable_targets(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/utils.py", line 60, in get_loadable_targets
+    else loadable_targets_from_python_package(package_name, working_directory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/workspace/autodiscovery.py", line 44, in loadable_targets_from_python_package
+    module = load_python_module(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 139, in load_python_module
+    raise DagsterImportError(
+dagster._core.errors.DagsterImportError: Encountered ImportError: `cannot import name 'prepare_data' from 'datafest_datathon.assets.ml_assets' (/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/assets/ml_assets.py)` while importing module datafest_datathon.definitions. Local modules were resolved using the working directory `/Users/nancyamandi/datafest_datathon_2024`. If another working directory should be used, please explicitly specify the appropriate path using the `-d` or `--working-directory` for CLI based targets or the `working_directory` configuration option for workspace targets. 
+2024-10-09 03:42:11,545 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 134, in load_python_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/definitions.py", line 7, in <module>
+    from datafest_datathon.ml_jobs import waec_pipeline, jamb_pipeline
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py", line 2, in <module>
+    from datafest_datathon.assets.ml_assets import (
+ImportError: cannot import name 'prepare_data' from 'datafest_datathon.assets.ml_assets' (/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/assets/ml_assets.py)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 255, in __init__
+    loadable_targets = get_loadable_targets(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/utils.py", line 60, in get_loadable_targets
+    else loadable_targets_from_python_package(package_name, working_directory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/workspace/autodiscovery.py", line 44, in loadable_targets_from_python_package
+    module = load_python_module(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 139, in load_python_module
+    raise DagsterImportError(
+dagster._core.errors.DagsterImportError: Encountered ImportError: `cannot import name 'prepare_data' from 'datafest_datathon.assets.ml_assets' (/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/assets/ml_assets.py)` while importing module datafest_datathon.definitions. Local modules were resolved using the working directory `/Users/nancyamandi/datafest_datathon_2024`. If another working directory should be used, please explicitly specify the appropriate path using the `-d` or `--working-directory` for CLI based targets or the `working_directory` configuration option for workspace targets. 
+2024-10-09 03:42:11,721 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34042
+2024-10-09 03:42:11,723 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34043
+2024-10-09 03:42:24,848 - INFO - Code server was interrupted
+2024-10-09 03:42:24,848 - INFO - Code server was interrupted
+2024-10-09 03:42:24,849 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34042
+2024-10-09 03:42:24,849 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34043
+2024-10-09 03:43:58,442 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34184
+2024-10-09 03:43:58,450 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34183
+2024-10-09 03:44:26,771 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:44:26,771 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:44:26,803 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:44:26,803 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:44:26,849 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:44:34,990 - INFO - Loading WAEC data...
+2024-10-09 03:44:35,008 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 03:44:34.991728", "event_id": "b38b8d62-1c28-4ca5-a751-6bfe8a363211", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "cb708346c574ca6976646c39c06dad0b465d7a27fb19b0b5e1bbc1a85e04346d", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "dc5bdaac-dfab-480d-8ff0-c8fb195eec95", "is_known_ci_env": false}
+2024-10-09 03:44:35,051 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 03:44:35.035001", "event_id": "094ec077-7886-413b-ab24-0a373b5ed62a", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "cb708346c574ca6976646c39c06dad0b465d7a27fb19b0b5e1bbc1a85e04346d", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "dc5bdaac-dfab-480d-8ff0-c8fb195eec95", "is_known_ci_env": false}
+2024-10-09 03:44:37,275 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:44:37,276 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:44:37,323 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:44:37,323 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:44:37,350 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:44:37,366 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:44:37,366 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:44:37,399 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:44:37,399 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:44:37,432 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:45:05,727 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34261
+2024-10-09 03:45:12,955 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:45:12,960 - INFO - Code server was interrupted
+2024-10-09 03:45:12,960 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34183
+2024-10-09 03:45:13,076 - INFO - Code server was interrupted
+2024-10-09 03:45:13,076 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34261
+2024-10-09 03:45:13,077 - INFO - Code server was interrupted
+2024-10-09 03:45:13,079 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34184
+2024-10-09 03:48:05,958 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34449
+2024-10-09 03:48:05,960 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34448
+2024-10-09 03:48:29,430 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:48:29,430 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:48:29,463 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:48:29,468 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:48:29,504 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:48:36,422 - INFO - Loading WAEC data...
+2024-10-09 03:48:36,432 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 03:48:36.423206", "event_id": "ea2c057f-e6b9-4d77-a88b-f54a8df83b8e", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "bd1cae251ad5d2e6e891cff14be25b2b78cc9a0332e5922acdc0109ca86b2e77", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "f3d63587-159f-4b19-bfa1-c877975b235a", "is_known_ci_env": false}
+2024-10-09 03:48:39,280 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 03:48:39,281 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 03:48:39,281 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 03:48:42,480 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 03:48:42.466406", "event_id": "14837fc1-2e43-4840-a6b4-ac62b257a8c8", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "bd1cae251ad5d2e6e891cff14be25b2b78cc9a0332e5922acdc0109ca86b2e77", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "f3d63587-159f-4b19-bfa1-c877975b235a", "is_known_ci_env": false}
+2024-10-09 03:48:44,700 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:48:44,700 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:48:44,755 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:48:44,755 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:48:44,783 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:48:44,800 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:48:44,800 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:48:44,830 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:48:44,830 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:48:44,858 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:49:06,501 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:49:06,503 - INFO - Code server was interrupted
+2024-10-09 03:49:06,503 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34449
+2024-10-09 03:49:06,782 - INFO - Code server was interrupted
+2024-10-09 03:49:06,784 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34448
+2024-10-09 03:56:40,301 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34757
+2024-10-09 03:56:40,333 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34758
+2024-10-09 03:57:21,822 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:57:21,823 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:57:21,921 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:57:21,921 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:57:21,995 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:57:29,184 - INFO - Loading WAEC data...
+2024-10-09 03:57:29,196 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 03:57:29.185427", "event_id": "9c5c8c53-88c6-45a8-8f58-467dc3893ce4", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "55c583591a945d6da460c5cfbfe6fda2a0a478ca986818c7fedf206ed2f667f2", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "dac2d7b0-b3a3-4619-a0e7-938f0935013e", "is_known_ci_env": false}
+2024-10-09 03:57:29,661 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 03:57:29,665 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 03:57:29,666 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 03:57:31,277 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 03:57:31.265405", "event_id": "6e0f979b-fc8a-4a1d-a916-35bed90ddb5d", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "55c583591a945d6da460c5cfbfe6fda2a0a478ca986818c7fedf206ed2f667f2", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "dac2d7b0-b3a3-4619-a0e7-938f0935013e", "is_known_ci_env": false}
+2024-10-09 03:57:33,848 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:57:33,848 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:57:33,912 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:57:33,913 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:57:33,948 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:57:33,970 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:57:33,970 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:57:34,019 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:57:34,019 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:57:34,051 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:57:48,188 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34866
+2024-10-09 03:57:56,066 - INFO - Code server was interrupted
+2024-10-09 03:57:56,066 - INFO - Code server was interrupted
+2024-10-09 03:57:56,066 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34866
+2024-10-09 03:57:56,066 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34758
+2024-10-09 03:57:56,067 - INFO - Code server was interrupted
+2024-10-09 03:57:56,070 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34757
+2024-10-09 03:58:08,233 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34939
+2024-10-09 03:58:08,235 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 34938
+2024-10-09 03:58:26,483 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:58:26,483 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:58:26,531 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:58:26,531 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:58:26,572 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:58:33,568 - INFO - Loading WAEC data...
+2024-10-09 03:58:33,582 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 03:58:33.569851", "event_id": "bbe0d9a4-d31e-44e5-bc73-1c3e4d7511be", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "d23d138508094a1a9f61621b522038674cb83d497186e072507684990648267d", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "0072d9eb-87d9-41b0-b3b8-d21300cf6be6", "is_known_ci_env": false}
+2024-10-09 03:58:34,076 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 03:58:34,076 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 03:58:34,125 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 03:58:34.113676", "event_id": "85d56714-2b73-4de8-8491-0c5c284d6632", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "d23d138508094a1a9f61621b522038674cb83d497186e072507684990648267d", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "0072d9eb-87d9-41b0-b3b8-d21300cf6be6", "is_known_ci_env": false}
+2024-10-09 03:58:36,419 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:58:36,420 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:58:36,460 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:58:36,461 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:58:36,487 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:58:36,503 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:58:36,503 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:58:36,537 - INFO - Context impl SQLiteImpl.
+2024-10-09 03:58:36,537 - INFO - Will assume non-transactional DDL.
+2024-10-09 03:58:36,563 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 03:58:54,776 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 03:58:54,779 - INFO - Code server was interrupted
+2024-10-09 03:58:54,779 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34939
+2024-10-09 03:58:54,901 - INFO - Code server was interrupted
+2024-10-09 03:58:54,902 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 34938
+2024-10-09 04:00:03,772 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 35100
+2024-10-09 04:00:03,775 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 35098
+2024-10-09 04:00:24,928 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:00:24,928 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:00:24,970 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:00:24,970 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:00:25,004 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:00:32,405 - INFO - Loading WAEC data...
+2024-10-09 04:00:32,419 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:00:32.406513", "event_id": "65b07cd1-d58b-47d0-b1da-977a1d584cf0", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "19f9aa4a72660e5f7990501cb620c7d597b579c231a74f65623a4266249b932f", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "653c1397-f43a-4a33-86bf-dcef85d90bb0", "is_known_ci_env": false}
+2024-10-09 04:00:32,980 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:00:32,980 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:00:33,030 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:00:33.017363", "event_id": "ac43591f-5965-4ea6-b735-1074249ca575", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "19f9aa4a72660e5f7990501cb620c7d597b579c231a74f65623a4266249b932f", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "653c1397-f43a-4a33-86bf-dcef85d90bb0", "is_known_ci_env": false}
+2024-10-09 04:00:35,045 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:00:35,046 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:00:35,082 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:00:35,082 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:00:35,109 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:00:35,122 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:00:35,122 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:00:35,155 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:00:35,155 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:00:35,190 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:00:58,163 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:00:58,164 - INFO - Code server was interrupted
+2024-10-09 04:00:58,164 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 35098
+2024-10-09 04:00:58,349 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:00:58,351 - INFO - Code server was interrupted
+2024-10-09 04:00:58,351 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 35100
+2024-10-09 04:02:44,405 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 35309
+2024-10-09 04:02:44,412 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 35312
+2024-10-09 04:03:06,855 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:03:06,856 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:03:06,902 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:03:06,902 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:03:06,942 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:03:13,765 - INFO - Loading WAEC data...
+2024-10-09 04:03:13,781 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:03:13.767151", "event_id": "02a2b25b-7986-477b-80c0-5611b9519a32", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "8ef99bfb4866216a709f5863a2f5b589f22ebf66fd0810e1ed5bfd2f7d08cb0d", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "332c92cc-6421-4382-8a84-83c0870217ec", "is_known_ci_env": false}
+2024-10-09 04:03:14,243 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:03:14,244 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:03:14,292 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:03:14.279881", "event_id": "fe2faa64-60e3-4a8a-95e0-e2ad0c4b1d5e", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "8ef99bfb4866216a709f5863a2f5b589f22ebf66fd0810e1ed5bfd2f7d08cb0d", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "332c92cc-6421-4382-8a84-83c0870217ec", "is_known_ci_env": false}
+2024-10-09 04:03:16,366 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:03:16,366 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:03:16,401 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:03:16,401 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:03:16,427 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:03:16,444 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:03:16,444 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:03:16,480 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:03:16,481 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:03:16,509 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:03:47,263 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:03:47,282 - INFO - Code server was interrupted
+2024-10-09 04:03:47,283 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 35312
+2024-10-09 04:03:47,302 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:03:47,304 - INFO - Code server was interrupted
+2024-10-09 04:03:47,304 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 35309
+2024-10-09 04:04:10,375 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 35447
+2024-10-09 04:04:10,375 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 35446
+2024-10-09 04:04:30,226 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:04:30,226 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:04:30,324 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:04:30,325 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:04:30,417 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:04:37,802 - INFO - Loading WAEC data...
+2024-10-09 04:04:37,815 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:04:37.803770", "event_id": "7085b927-28be-4530-ab9d-7e126b608dbc", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "bfc79aa4fdc35a3b34e465a0f93199ac84e90dff39ab5066f923968158fd7dda", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "ebbcd93a-5ba5-4d33-b998-9a3b89e8fa22", "is_known_ci_env": false}
+2024-10-09 04:04:38,255 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:04:38,256 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:04:38,307 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:04:38.293273", "event_id": "9c6e7c87-6383-4720-a627-d4195b9de256", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "bfc79aa4fdc35a3b34e465a0f93199ac84e90dff39ab5066f923968158fd7dda", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "ebbcd93a-5ba5-4d33-b998-9a3b89e8fa22", "is_known_ci_env": false}
+2024-10-09 04:04:40,654 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:04:40,654 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:04:40,695 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:04:40,695 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:04:40,724 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:04:40,739 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:04:40,739 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:04:40,772 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:04:40,772 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:04:40,806 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:05:18,816 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 35521
+2024-10-09 04:05:50,577 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:05:50,588 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 35446
+2024-10-09 04:06:26,166 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 35560
+2024-10-09 04:06:56,265 - INFO - Code server was interrupted
+2024-10-09 04:06:56,266 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 35560
+2024-10-09 04:06:56,265 - INFO - Code server was interrupted
+2024-10-09 04:06:56,266 - INFO - Code server was interrupted
+2024-10-09 04:06:56,267 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 35521
+2024-10-09 04:06:56,267 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 35447
+2024-10-09 04:20:29,655 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36206
+2024-10-09 04:20:29,655 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36207
+2024-10-09 04:20:49,239 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:20:49,240 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:20:49,274 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:20:49,274 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:20:49,322 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:20:57,329 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:20:57,332 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:20:57,332 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 04:20:57,352 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:20:57.329333", "event_id": "a6f953e8-e5fa-46e4-adcc-38a527102034", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "5f52a1ba4ebdbbda9ba49c68e08978267732f2fa3464d69d7ef2778c9924a016", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "da5cf0b1-64e8-44c8-b4eb-d96c76778bb8", "is_known_ci_env": false}
+2024-10-09 04:20:59,282 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:20:59.278636", "event_id": "f983eb6d-e5f3-4825-b5a6-7896d0b1d742", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "5f52a1ba4ebdbbda9ba49c68e08978267732f2fa3464d69d7ef2778c9924a016", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "da5cf0b1-64e8-44c8-b4eb-d96c76778bb8", "is_known_ci_env": false}
+2024-10-09 04:21:01,866 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:21:01,867 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:21:01,940 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:21:01,940 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:21:01,980 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:21:02,007 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:21:02,007 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:21:02,045 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:21:02,045 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:21:02,071 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:21:11,918 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:21:12,143 - INFO - Code server was interrupted
+2024-10-09 04:21:12,143 - INFO - Code server was interrupted
+2024-10-09 04:21:12,143 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36207
+2024-10-09 04:21:12,143 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36206
+2024-10-09 04:21:55,259 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36351
+2024-10-09 04:21:55,259 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36350
+2024-10-09 04:22:18,042 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:22:18,043 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:22:18,079 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:22:18,079 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:22:18,111 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:22:26,863 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:22:26,865 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:22:26,865 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 04:22:26,878 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:22:26.864017", "event_id": "71ba5490-b868-4a20-b045-12e5366027e5", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "5cf6a56a22c3ae87eca7a58c26cc0b6253e46dbca9fb349dbac8bc5d756fffc6", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "74d98639-b647-44cd-b4eb-d3e06c604e0c", "is_known_ci_env": false}
+2024-10-09 04:22:28,613 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:22:28.609562", "event_id": "41f43adb-f64f-4ce2-9208-81d007ba829a", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "5cf6a56a22c3ae87eca7a58c26cc0b6253e46dbca9fb349dbac8bc5d756fffc6", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "74d98639-b647-44cd-b4eb-d3e06c604e0c", "is_known_ci_env": false}
+2024-10-09 04:22:30,979 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:22:30,980 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:22:31,045 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:22:31,045 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:22:31,081 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:22:31,105 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:22:31,105 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:22:31,146 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:22:31,146 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:22:31,177 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:23:02,866 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36483
+2024-10-09 04:23:08,878 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:23:08,880 - INFO - Code server was interrupted
+2024-10-09 04:23:08,880 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36483
+2024-10-09 04:23:08,929 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:23:08,930 - INFO - Code server was interrupted
+2024-10-09 04:23:08,931 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36351
+2024-10-09 04:23:09,009 - INFO - Code server was interrupted
+2024-10-09 04:23:09,015 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36350
+2024-10-09 04:23:38,220 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36578
+2024-10-09 04:23:38,220 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36577
+2024-10-09 04:24:10,382 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:24:10,383 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:24:10,595 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:24:10,596 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:24:10,724 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:24:18,672 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:24:18,675 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:24:18,675 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 04:24:18,687 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:24:18.672558", "event_id": "75ad961a-6ad4-4920-92a2-3e2e690ca823", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "95195b1dce79aaddc9f509b06cd402752ecdb257cb351225e04d7c4bc41b4c4c", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "a961bff9-3374-407c-bdd5-2689c0d38628", "is_known_ci_env": false}
+2024-10-09 04:24:20,002 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:24:19.999425", "event_id": "9df4f8ec-029b-4e34-a763-df9503277884", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "95195b1dce79aaddc9f509b06cd402752ecdb257cb351225e04d7c4bc41b4c4c", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "a961bff9-3374-407c-bdd5-2689c0d38628", "is_known_ci_env": false}
+2024-10-09 04:24:22,601 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:24:22,602 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:24:22,652 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:24:22,652 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:24:22,681 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:24:22,699 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:24:22,700 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:24:22,730 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:24:22,730 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:24:22,758 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:24:47,393 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36677
+2024-10-09 04:25:18,500 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:25:18,508 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36577
+2024-10-09 04:25:55,486 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36720
+2024-10-09 04:26:27,624 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:26:27,633 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36677
+2024-10-09 04:27:03,042 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36834
+2024-10-09 04:27:05,501 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:27:05,503 - INFO - Code server was interrupted
+2024-10-09 04:27:05,503 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36720
+2024-10-09 04:27:05,542 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:27:05,543 - INFO - Code server was interrupted
+2024-10-09 04:27:05,543 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36834
+2024-10-09 04:27:05,606 - INFO - Code server was interrupted
+2024-10-09 04:27:05,614 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36578
+2024-10-09 04:27:17,310 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36898
+2024-10-09 04:27:17,310 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36897
+2024-10-09 04:27:52,458 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:27:52,458 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:27:52,523 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:27:52,523 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:27:52,566 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:28:00,027 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:28:00,030 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:28:00,030 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 04:28:00,045 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:28:00.027484", "event_id": "6bdd8a9d-d9fa-4893-9312-78b42799417f", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "436cae9af1d4d9c1c956cae6486053968f81fa13c4b3aff89a8a72b7f13be131", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "5f3c46bc-fc85-40f1-b032-aab4c09d50b7", "is_known_ci_env": false}
+2024-10-09 04:28:01,611 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:28:01.608191", "event_id": "c4bf1cc7-c223-44af-9c7f-8fb2e5e05903", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "436cae9af1d4d9c1c956cae6486053968f81fa13c4b3aff89a8a72b7f13be131", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "5f3c46bc-fc85-40f1-b032-aab4c09d50b7", "is_known_ci_env": false}
+2024-10-09 04:28:01,615 - INFO - closed
+2024-10-09 04:28:01,615 - INFO - No async queries seem to be running, deleting session
+2024-10-09 04:28:04,317 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:28:04,318 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:28:04,367 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:28:04,367 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:28:04,403 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:28:04,426 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:28:04,426 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:28:04,469 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:28:04,469 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:28:04,518 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:28:24,767 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 36992
+2024-10-09 04:28:30,687 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:28:30,689 - INFO - Code server was interrupted
+2024-10-09 04:28:30,689 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36898
+2024-10-09 04:28:30,787 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:28:30,788 - INFO - Code server was interrupted
+2024-10-09 04:28:30,788 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36992
+2024-10-09 04:28:30,797 - INFO - Code server was interrupted
+2024-10-09 04:28:30,799 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 36897
+2024-10-09 04:31:11,976 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37147
+2024-10-09 04:31:11,976 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37144
+2024-10-09 04:32:19,895 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37248
+2024-10-09 04:32:26,193 - INFO - Code server was interrupted
+2024-10-09 04:32:26,194 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37248
+2024-10-09 04:32:26,195 - INFO - Code server was interrupted
+2024-10-09 04:32:26,195 - INFO - Code server was interrupted
+2024-10-09 04:32:26,198 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37144
+2024-10-09 04:32:26,198 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37147
+2024-10-09 04:32:40,805 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37325
+2024-10-09 04:32:40,805 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37324
+2024-10-09 04:33:02,559 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:33:02,559 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:33:02,607 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:33:02,607 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:33:02,640 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:33:10,194 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:33:10,196 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:33:10,196 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 04:33:10,209 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:33:10.194466", "event_id": "48ef9321-4aeb-4789-b66d-e7775c7e8bc8", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "ff06f70d0f3fd5be0904f0a0246abea83988488b457e1091c89a296c6b06ee89", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "b78baaa8-3b47-4d68-8800-5e2813a69859", "is_known_ci_env": false}
+2024-10-09 04:33:11,960 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:33:11.957254", "event_id": "93bc0cd1-6af7-4fcc-b8e4-ce7bfb2bf29b", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "ff06f70d0f3fd5be0904f0a0246abea83988488b457e1091c89a296c6b06ee89", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "b78baaa8-3b47-4d68-8800-5e2813a69859", "is_known_ci_env": false}
+2024-10-09 04:33:11,967 - INFO - closed
+2024-10-09 04:33:11,967 - INFO - No async queries seem to be running, deleting session
+2024-10-09 04:33:15,288 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:33:15,290 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:33:15,328 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:33:15,328 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:33:15,353 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:33:15,369 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:33:15,369 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:33:15,400 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:33:15,400 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:33:15,428 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:33:50,796 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37412
+2024-10-09 04:34:21,134 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:34:21,145 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37324
+2024-10-09 04:34:22,471 - INFO - Code server was interrupted
+2024-10-09 04:34:22,472 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37412
+2024-10-09 04:34:22,472 - INFO - Code server was interrupted
+2024-10-09 04:34:22,474 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37325
+2024-10-09 04:35:17,700 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37528
+2024-10-09 04:35:17,700 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37527
+2024-10-09 04:35:36,432 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:35:36,432 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:35:36,475 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:35:36,475 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:35:36,510 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:35:44,312 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:35:44,313 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:35:44,313 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 04:35:44,328 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:35:44.312281", "event_id": "3ddfbc23-2bc4-4e59-9b29-d86dfc80c4e3", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "f44bee3cb607eb115017bb73437a028f27777c443e1f9b0f804c66d5b2ea43a7", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "de939441-d3b6-4c7f-9f04-167bec643d53", "is_known_ci_env": false}
+2024-10-09 04:35:45,696 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:35:45.693616", "event_id": "5a9a8c89-e2e5-424c-b5b1-ac8452b11dd3", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "f44bee3cb607eb115017bb73437a028f27777c443e1f9b0f804c66d5b2ea43a7", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "de939441-d3b6-4c7f-9f04-167bec643d53", "is_known_ci_env": false}
+2024-10-09 04:35:45,702 - INFO - closed
+2024-10-09 04:35:45,702 - INFO - No async queries seem to be running, deleting session
+2024-10-09 04:35:48,572 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:35:48,572 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:35:48,628 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:35:48,628 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:35:48,667 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:35:48,695 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:35:48,695 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:35:48,740 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:35:48,740 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:35:48,772 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:36:26,100 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37598
+2024-10-09 04:36:47,640 - INFO - Code server was interrupted
+2024-10-09 04:36:47,641 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37598
+2024-10-09 04:36:47,641 - INFO - Code server was interrupted
+2024-10-09 04:36:47,642 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37528
+2024-10-09 04:36:47,641 - INFO - Code server was interrupted
+2024-10-09 04:36:47,642 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:36:47,644 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37527
+2024-10-09 04:37:29,326 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37678
+2024-10-09 04:37:29,326 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37677
+2024-10-09 04:37:52,126 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:37:52,127 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:37:52,175 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:37:52,176 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:37:52,209 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:38:00,050 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:38:00,053 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:38:00,054 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 04:38:00,065 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:38:00.050469", "event_id": "ce41873b-659c-41a1-be64-5d79bda3ac9c", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "bee8073fb464b2cda0cf7d1fae4c7a53e14489b780a8704d249310e417a09ef1", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8c550d67-2d79-46a2-828c-b489bd84c00c", "is_known_ci_env": false}
+2024-10-09 04:38:01,533 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:38:01.530606", "event_id": "94448e0e-a06b-45d1-a5f9-8ed0b793ffc0", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "bee8073fb464b2cda0cf7d1fae4c7a53e14489b780a8704d249310e417a09ef1", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8c550d67-2d79-46a2-828c-b489bd84c00c", "is_known_ci_env": false}
+2024-10-09 04:38:01,539 - INFO - closed
+2024-10-09 04:38:01,539 - INFO - No async queries seem to be running, deleting session
+2024-10-09 04:38:04,161 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:38:04,162 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:38:04,236 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:38:04,236 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:38:04,284 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:38:04,319 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:38:04,319 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:38:04,367 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:38:04,368 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:38:04,395 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:38:37,112 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37761
+2024-10-09 04:39:09,674 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:39:09,699 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37677
+2024-10-09 04:39:46,027 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 37849
+2024-10-09 04:40:17,438 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:40:17,445 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37761
+2024-10-09 04:40:17,695 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:40:17,747 - INFO - Code server was interrupted
+2024-10-09 04:40:17,748 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37849
+2024-10-09 04:40:17,750 - INFO - Code server was interrupted
+2024-10-09 04:40:17,752 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 37678
+2024-10-09 04:42:03,359 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38003
+2024-10-09 04:42:03,359 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38000
+2024-10-09 04:42:27,571 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:42:27,571 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:42:27,613 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:42:27,613 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:42:27,653 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:42:35,733 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:42:35,735 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:42:35,735 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 04:42:35,751 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:42:35.733621", "event_id": "0a4ccbd3-e79e-4208-b10a-afc668eb6812", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "6a45d8da5f3a2a0c0bfabeda17d3fb0c283d064f6b19633d268942d024ee562c", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8e376bd5-137e-4ddd-80b3-15a1ae75194b", "is_known_ci_env": false}
+2024-10-09 04:42:37,707 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:42:37.703925", "event_id": "89c78351-1551-4a21-8448-7309e8cda54e", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "6a45d8da5f3a2a0c0bfabeda17d3fb0c283d064f6b19633d268942d024ee562c", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8e376bd5-137e-4ddd-80b3-15a1ae75194b", "is_known_ci_env": false}
+2024-10-09 04:42:37,713 - INFO - closed
+2024-10-09 04:42:37,713 - INFO - No async queries seem to be running, deleting session
+2024-10-09 04:42:39,851 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:42:39,851 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:42:39,899 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:42:39,899 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:42:39,930 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:42:39,951 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:42:39,951 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:42:39,986 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:42:39,986 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:42:40,015 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:42:48,584 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:42:48,589 - INFO - Code server was interrupted
+2024-10-09 04:42:48,589 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38003
+2024-10-09 04:42:48,871 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:42:48,896 - INFO - Code server was interrupted
+2024-10-09 04:42:48,897 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38000
+2024-10-09 04:46:41,773 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38261
+2024-10-09 04:46:41,773 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38260
+2024-10-09 04:47:06,006 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:47:06,009 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:47:06,044 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:47:06,044 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:47:06,096 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:47:13,449 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:47:13,452 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:47:13,454 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 04:47:13,470 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:47:13.449861", "event_id": "bb4ccaf0-225c-4b0e-9647-3ff408070aab", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "fcfedb89677b17c198e3477795a0f548bc8e2879b990a2365a3659c7bdc5418a", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "4eb6a775-21ea-467c-92bc-dae6d4915962", "is_known_ci_env": false}
+2024-10-09 04:47:18,993 - INFO - Number of results in first chunk: 370
+2024-10-09 04:47:51,978 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38329
+2024-10-09 04:48:02,338 - INFO - Number of results in first chunk: 1
+2024-10-09 04:48:02,339 - INFO - closed
+2024-10-09 04:48:02,558 - INFO - No async queries seem to be running, deleting session
+2024-10-09 04:48:02,899 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:48:02.859800", "event_id": "dcf79a84-c2e9-47fe-96e4-b084a2a6d8ac", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "fcfedb89677b17c198e3477795a0f548bc8e2879b990a2365a3659c7bdc5418a", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "4eb6a775-21ea-467c-92bc-dae6d4915962", "is_known_ci_env": false}
+2024-10-09 04:48:14,696 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:48:14,707 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:48:15,122 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:48:15,123 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:48:15,154 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:48:15,205 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:48:15,205 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:48:15,245 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:48:15,246 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:48:15,322 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:48:21,894 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:48:24,988 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38260
+2024-10-09 04:48:56,786 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:48:56,789 - INFO - Code server was interrupted
+2024-10-09 04:48:56,789 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38329
+2024-10-09 04:48:56,976 - INFO - Code server was interrupted
+2024-10-09 04:48:56,976 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38261
+2024-10-09 04:49:09,137 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38451
+2024-10-09 04:49:09,137 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38450
+2024-10-09 04:49:31,497 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:49:31,497 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:49:31,556 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:49:31,556 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:49:31,606 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:49:40,001 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:49:40,003 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:49:40,003 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 04:49:40,017 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:49:40.002156", "event_id": "507d036d-34f6-40f5-9fd8-d4e296eb81aa", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "bbd361eb0006c02f73852165fef04f8b89141926b8f49a848907bae44d8bcc55", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "beb97330-90f5-492f-aa35-403b8d62dfa0", "is_known_ci_env": false}
+2024-10-09 04:49:41,445 - INFO - Number of results in first chunk: 0
+2024-10-09 04:50:17,451 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38527
+2024-10-09 04:50:28,290 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))': /iagq0000-s/results/01b79103-0001-610e-0001-e49600021866_0/main/data_0_7_5?x-amz-server-side-encryption-customer-algorithm=AES256&response-content-encoding=gzip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241009T034941Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21599&X-Amz-Credential=AKIA5FTZBXXRK4UX3GU5%2F20241009%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Signature=3048795532329d8ee8f25abc6e6cbf281ab4af98e2c52f10b5aeeb9cbc744d6e
+2024-10-09 04:50:38,469 - INFO - Number of results in first chunk: 1
+2024-10-09 04:50:38,470 - INFO - closed
+2024-10-09 04:50:38,603 - INFO - No async queries seem to be running, deleting session
+2024-10-09 04:50:38,953 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:50:38.911887", "event_id": "08fd1f2a-a155-41f4-bab7-18c63a11cc79", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "bbd361eb0006c02f73852165fef04f8b89141926b8f49a848907bae44d8bcc55", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "beb97330-90f5-492f-aa35-403b8d62dfa0", "is_known_ci_env": false}
+2024-10-09 04:50:49,325 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:50:49,465 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38450
+2024-10-09 04:50:50,755 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:50:50,756 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:50:50,830 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:50:50,830 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:50:50,865 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:50:50,886 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:50:50,887 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:50:50,918 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:50:50,918 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:50:50,944 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:51:24,790 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:51:24,795 - INFO - Code server was interrupted
+2024-10-09 04:51:24,795 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38451
+2024-10-09 04:51:24,859 - INFO - Code server was interrupted
+2024-10-09 04:51:24,865 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38527
+2024-10-09 04:52:19,244 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38671
+2024-10-09 04:52:19,244 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38670
+2024-10-09 04:52:42,055 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:52:42,056 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:52:42,089 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:52:42,089 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:52:42,142 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:52:49,894 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 04:52:49,898 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 04:52:49,898 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 04:52:49,912 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:52:49.894847", "event_id": "4c70d0a2-b01b-4379-b911-cc3d421ae72d", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "03e3921ca3fbad48a43bfe5c30a3e02973e5dfd627b2beb6d8b566174b10ed7d", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "0eb39eeb-daf6-41d4-92ff-2b0767fa28ce", "is_known_ci_env": false}
+2024-10-09 04:52:51,671 - INFO - Number of results in first chunk: 0
+2024-10-09 04:53:13,438 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))': /iagq0000-s/results/01b79103-0001-610e-0001-e49600021866_0/main/data_0_2_4?x-amz-server-side-encryption-customer-algorithm=AES256&response-content-encoding=gzip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241009T035251Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21599&X-Amz-Credential=AKIA5FTZBXXRK4UX3GU5%2F20241009%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Signature=8ac161cd8ed65720522cd190ededd5223f7419500aec58be919ff9841bf430f1
+2024-10-09 04:53:27,337 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38732
+2024-10-09 04:53:51,128 - INFO - Number of results in first chunk: 1
+2024-10-09 04:53:51,129 - INFO - closed
+2024-10-09 04:53:51,274 - INFO - No async queries seem to be running, deleting session
+2024-10-09 04:53:59,763 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:53:59,920 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38670
+2024-10-09 04:54:39,304 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38768
+2024-10-09 04:55:07,634 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:55:07,781 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38732
+2024-10-09 04:55:52,587 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38833
+2024-10-09 04:56:19,691 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:56:19,713 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38768
+2024-10-09 04:56:58,833 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 04:56:58.518595", "event_id": "c300bac3-07b5-442e-ac95-1766080f5326", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "03e3921ca3fbad48a43bfe5c30a3e02973e5dfd627b2beb6d8b566174b10ed7d", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d", "duration_ms": 238621.98574099602}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "0eb39eeb-daf6-41d4-92ff-2b0767fa28ce", "is_known_ci_env": false}
+2024-10-09 04:57:01,118 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 38906
+2024-10-09 04:57:06,770 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 04:57:06.751263", "event_id": "6b4e09db-caac-4d04-8413-24b206f67824", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "03e3921ca3fbad48a43bfe5c30a3e02973e5dfd627b2beb6d8b566174b10ed7d", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "0eb39eeb-daf6-41d4-92ff-2b0767fa28ce", "is_known_ci_env": false}
+2024-10-09 04:57:24,398 - INFO - Cleaning WAEC data...
+2024-10-09 04:57:24,402 - INFO - WAEC data loaded successfully. Number of rows: 2490785
+2024-10-09 04:57:24,534 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 04:57:24.493230", "event_id": "b0bbf046-ce82-49e8-b3dc-6444e7b76f88", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "03e3921ca3fbad48a43bfe5c30a3e02973e5dfd627b2beb6d8b566174b10ed7d", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "0eb39eeb-daf6-41d4-92ff-2b0767fa28ce", "is_known_ci_env": false}
+2024-10-09 04:57:31,345 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:57:31,356 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:57:31,543 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:57:31,543 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:57:31,583 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:57:31,630 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:57:31,631 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:57:31,675 - INFO - Context impl SQLiteImpl.
+2024-10-09 04:57:31,675 - INFO - Will assume non-transactional DDL.
+2024-10-09 04:57:31,703 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 04:57:32,850 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 04:57:32,925 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38833
+2024-10-09 04:57:48,148 - INFO - Code server was interrupted
+2024-10-09 04:57:48,148 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38671
+2024-10-09 04:57:48,148 - INFO - Code server was interrupted
+2024-10-09 04:57:48,151 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 38906
+2024-10-09 05:01:58,088 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39121
+2024-10-09 05:01:58,088 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39122
+2024-10-09 05:02:10,017 - INFO - Code server was interrupted
+2024-10-09 05:02:10,017 - INFO - Code server was interrupted
+2024-10-09 05:02:10,018 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39121
+2024-10-09 05:02:10,018 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39122
+2024-10-09 05:03:04,592 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39240
+2024-10-09 05:03:04,592 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39241
+2024-10-09 05:03:22,470 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:03:22,470 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:03:22,503 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:03:22,503 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:03:22,549 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:03:30,112 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 05:03:30,113 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 05:03:30,114 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 05:03:30,130 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:03:30.111930", "event_id": "cade961e-e401-449b-a174-66ca5d673360", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "e713c3b4964d1c8351c035659111b37ad7d62df3e09753ebeac3b54605be6c8a", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "95bbb4bf-686c-40c3-86e7-97e0345df90f", "is_known_ci_env": false}
+2024-10-09 05:03:32,436 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 05:03:32.429965", "event_id": "58beda4d-fa8d-4f6d-9320-4ce5a93f4e75", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "e713c3b4964d1c8351c035659111b37ad7d62df3e09753ebeac3b54605be6c8a", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "95bbb4bf-686c-40c3-86e7-97e0345df90f", "is_known_ci_env": false}
+2024-10-09 05:03:32,443 - INFO - closed
+2024-10-09 05:03:32,443 - INFO - No async queries seem to be running, deleting session
+2024-10-09 05:03:35,140 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:03:35,141 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:03:35,192 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:03:35,192 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:03:35,230 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:03:35,254 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:03:35,254 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:03:35,295 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:03:35,295 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:03:35,336 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:03:43,668 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:03:43,674 - INFO - Code server was interrupted
+2024-10-09 05:03:43,674 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39240
+2024-10-09 05:03:43,781 - INFO - Code server was interrupted
+2024-10-09 05:03:43,782 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39241
+2024-10-09 05:05:04,132 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39402
+2024-10-09 05:05:04,132 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39401
+2024-10-09 05:05:21,589 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:05:21,590 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:05:21,623 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:05:21,623 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:05:21,666 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:05:29,693 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 05:05:29,694 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 05:05:29,695 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 05:05:29,708 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:05:29.693621", "event_id": "f4005a4a-f1b7-4491-943b-ed05930c37e1", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "028f5bf0f60b6592287dd835e8bc03cb9d8a32d14e12befb7cdd5108a2e28a6d", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "e48e2f8f-c119-4080-b26a-b94fde9ac458", "is_known_ci_env": false}
+2024-10-09 05:05:31,403 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 05:05:31.398408", "event_id": "4c77906c-1e18-4810-ae22-50e6a5b68063", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "028f5bf0f60b6592287dd835e8bc03cb9d8a32d14e12befb7cdd5108a2e28a6d", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "e48e2f8f-c119-4080-b26a-b94fde9ac458", "is_known_ci_env": false}
+2024-10-09 05:05:31,408 - INFO - closed
+2024-10-09 05:05:31,408 - INFO - No async queries seem to be running, deleting session
+2024-10-09 05:05:33,884 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:05:33,885 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:05:33,922 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:05:33,923 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:05:33,948 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:05:33,960 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:05:33,960 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:05:33,990 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:05:33,990 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:05:34,017 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:05:42,084 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:05:42,089 - INFO - Code server was interrupted
+2024-10-09 05:05:42,089 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39402
+2024-10-09 05:05:42,300 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:05:42,303 - INFO - Code server was interrupted
+2024-10-09 05:05:42,303 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39401
+2024-10-09 05:06:04,805 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39516
+2024-10-09 05:06:04,805 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39517
+2024-10-09 05:06:23,803 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:06:23,804 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:06:23,845 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:06:23,845 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:06:23,878 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:06:31,514 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 05:06:31,516 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 05:06:31,516 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 05:06:31,528 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:06:31.514817", "event_id": "2951e0f5-f7dc-4a11-a8bd-80a3db27f43e", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "75acd6c6b4ff928d6aebba8dfba8f4243e7bf68e9392856aa5d069be397ab49b", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "09e72f7f-789b-40cb-bcf5-0d409eef73ef", "is_known_ci_env": false}
+2024-10-09 05:06:33,325 - INFO - Number of results in first chunk: 400
+2024-10-09 05:06:34,221 - INFO - Number of results in first chunk: 1
+2024-10-09 05:06:34,222 - INFO - closed
+2024-10-09 05:06:34,378 - INFO - No async queries seem to be running, deleting session
+2024-10-09 05:06:34,565 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:06:34.562229", "event_id": "9f54821d-4086-4106-a5b5-6f3eae2a4a7c", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "75acd6c6b4ff928d6aebba8dfba8f4243e7bf68e9392856aa5d069be397ab49b", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d", "duration_ms": 3043.0074609976145}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "09e72f7f-789b-40cb-bcf5-0d409eef73ef", "is_known_ci_env": false}
+2024-10-09 05:06:42,385 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:06:42.369827", "event_id": "21f67863-b168-42f2-aacf-ded88a1cedb5", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "75acd6c6b4ff928d6aebba8dfba8f4243e7bf68e9392856aa5d069be397ab49b", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "09e72f7f-789b-40cb-bcf5-0d409eef73ef", "is_known_ci_env": false}
+2024-10-09 05:06:42,404 - INFO - Cleaning WAEC data...
+2024-10-09 05:06:42,404 - INFO - WAEC data loaded successfully. Number of rows: 1000
+2024-10-09 05:06:42,428 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 05:06:42.422194", "event_id": "359b234d-c6d5-4479-8297-9cd8eec3e669", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "75acd6c6b4ff928d6aebba8dfba8f4243e7bf68e9392856aa5d069be397ab49b", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "09e72f7f-789b-40cb-bcf5-0d409eef73ef", "is_known_ci_env": false}
+2024-10-09 05:06:44,624 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:06:44,625 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:06:44,675 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:06:44,675 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:06:44,711 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:06:44,732 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:06:44,732 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:06:44,951 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:06:44,951 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:06:44,982 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:07:12,502 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39612
+2024-10-09 05:07:44,920 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:07:44,927 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39516
+2024-10-09 05:08:20,960 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39776
+2024-10-09 05:08:52,709 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:08:52,719 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39612
+2024-10-09 05:09:00,742 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:09:00,746 - INFO - Code server was interrupted
+2024-10-09 05:09:00,746 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39776
+2024-10-09 05:09:00,754 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:09:00,776 - INFO - Code server was interrupted
+2024-10-09 05:09:00,776 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39517
+2024-10-09 05:09:16,025 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39875
+2024-10-09 05:09:16,025 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39876
+2024-10-09 05:09:36,836 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:09:36,836 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:09:36,873 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:09:36,874 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:09:36,919 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:09:44,442 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 05:09:44,443 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 05:09:44,444 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 05:09:44,455 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:09:44.442680", "event_id": "9d8d4601-7682-460e-92fb-7846e5577683", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "00614c18233c1f3cb0b5b8c56697598ae6da8d5135196139b39b82608e894fcc", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "63544b56-ee3f-4c56-8160-1489738f7d79", "is_known_ci_env": false}
+2024-10-09 05:09:46,686 - INFO - Number of results in first chunk: 0
+2024-10-09 05:09:47,627 - INFO - Number of results in first chunk: 1
+2024-10-09 05:09:47,627 - INFO - closed
+2024-10-09 05:09:47,769 - INFO - No async queries seem to be running, deleting session
+2024-10-09 05:09:47,958 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:09:47.954081", "event_id": "869ff6b7-ddd4-4705-8051-e62d7979d37e", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "00614c18233c1f3cb0b5b8c56697598ae6da8d5135196139b39b82608e894fcc", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d", "duration_ms": 3508.092881005723}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "63544b56-ee3f-4c56-8160-1489738f7d79", "is_known_ci_env": false}
+2024-10-09 05:09:56,482 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:09:56.467068", "event_id": "c3ce8373-d814-4c1a-90ed-be560c4e5382", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "00614c18233c1f3cb0b5b8c56697598ae6da8d5135196139b39b82608e894fcc", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "63544b56-ee3f-4c56-8160-1489738f7d79", "is_known_ci_env": false}
+2024-10-09 05:09:56,502 - INFO - Cleaning WAEC data...
+2024-10-09 05:09:56,503 - INFO - WAEC data loaded successfully. Number of rows: 1000
+2024-10-09 05:09:56,531 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 05:09:56.528651", "event_id": "e0c71495-122f-47cc-899f-66deb20cf466", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "00614c18233c1f3cb0b5b8c56697598ae6da8d5135196139b39b82608e894fcc", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "63544b56-ee3f-4c56-8160-1489738f7d79", "is_known_ci_env": false}
+2024-10-09 05:09:58,834 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:09:58,835 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:09:58,877 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:09:58,877 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:09:58,906 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:09:58,928 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:09:58,928 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:09:58,970 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:09:58,970 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:09:59,014 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:10:23,511 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 39997
+2024-10-09 05:10:56,125 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:10:56,133 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39875
+2024-10-09 05:10:56,689 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:10:56,710 - INFO - Code server was interrupted
+2024-10-09 05:10:56,710 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39997
+2024-10-09 05:10:56,710 - INFO - Code server was interrupted
+2024-10-09 05:10:56,710 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 39876
+2024-10-09 05:11:09,519 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 40113
+2024-10-09 05:11:09,519 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 40122
+2024-10-09 05:11:38,787 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:11:38,787 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:11:38,837 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:11:38,837 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:11:38,873 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:11:47,277 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 05:11:47,280 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 05:11:47,281 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 05:11:47,292 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:11:47.277929", "event_id": "42de2a50-88ee-41ed-af03-4a4e38a47fb9", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "696adeef79c9323f59a434a183e1c73775ecca8278e6507ba773d60a68f74257", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "15ba2a45-e0ac-4c08-bef5-0589aae7bdf1", "is_known_ci_env": false}
+2024-10-09 05:11:48,767 - INFO - Number of results in first chunk: 0
+2024-10-09 05:11:49,712 - INFO - Number of results in first chunk: 1
+2024-10-09 05:11:49,712 - INFO - closed
+2024-10-09 05:11:49,851 - INFO - No async queries seem to be running, deleting session
+2024-10-09 05:11:50,048 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:11:50.043117", "event_id": "a0b87dcf-fa62-48fa-803c-3a23d653bb2b", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "696adeef79c9323f59a434a183e1c73775ecca8278e6507ba773d60a68f74257", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d", "duration_ms": 2762.0918169996003}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "15ba2a45-e0ac-4c08-bef5-0589aae7bdf1", "is_known_ci_env": false}
+2024-10-09 05:11:58,207 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:11:58.194596", "event_id": "e511567c-ee80-482b-9918-9e7e329b361d", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "696adeef79c9323f59a434a183e1c73775ecca8278e6507ba773d60a68f74257", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "15ba2a45-e0ac-4c08-bef5-0589aae7bdf1", "is_known_ci_env": false}
+2024-10-09 05:11:58,225 - INFO - Cleaning WAEC data...
+2024-10-09 05:11:58,225 - INFO - WAEC data loaded successfully. Number of rows: 1000
+2024-10-09 05:11:58,257 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 05:11:58.253912", "event_id": "27eb2fd4-0760-4081-abf7-b118a7097d94", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "696adeef79c9323f59a434a183e1c73775ecca8278e6507ba773d60a68f74257", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "15ba2a45-e0ac-4c08-bef5-0589aae7bdf1", "is_known_ci_env": false}
+2024-10-09 05:12:00,477 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:12:00,478 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:12:00,519 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:12:00,519 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:12:00,546 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:12:00,561 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:12:00,562 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:12:00,590 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:12:00,590 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:12:00,614 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:12:18,730 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 40113
+2024-10-09 05:12:18,719 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:13:53,434 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 40365
+2024-10-09 05:13:53,434 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 40368
+2024-10-09 05:14:15,484 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:14:15,485 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:14:15,519 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:14:15,519 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:14:15,561 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:14:23,618 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 05:14:23,620 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 05:14:23,620 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 05:14:23,644 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:14:23.618791", "event_id": "ab0d00b1-a663-426f-8325-3a9094e0c525", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "3858f2c0c846c07be58b737ea25fef8b85f62eb37798dd2674c17d72ebdb91f1", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "89a9f8e5-2daf-460a-a9ed-7254050eba2a", "is_known_ci_env": false}
+2024-10-09 05:14:25,909 - INFO - Number of results in first chunk: 0
+2024-10-09 05:14:26,972 - INFO - Number of results in first chunk: 1
+2024-10-09 05:14:26,972 - INFO - closed
+2024-10-09 05:14:27,110 - INFO - No async queries seem to be running, deleting session
+2024-10-09 05:14:27,318 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:14:27.314226", "event_id": "8780ed12-aece-4157-82c3-5a7e5908b94b", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "3858f2c0c846c07be58b737ea25fef8b85f62eb37798dd2674c17d72ebdb91f1", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d", "duration_ms": 3685.238415004278}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "89a9f8e5-2daf-460a-a9ed-7254050eba2a", "is_known_ci_env": false}
+2024-10-09 05:14:35,823 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:14:35.811947", "event_id": "c8cfac3d-85c2-410f-ba90-73fc9d88f793", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "3858f2c0c846c07be58b737ea25fef8b85f62eb37798dd2674c17d72ebdb91f1", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "89a9f8e5-2daf-460a-a9ed-7254050eba2a", "is_known_ci_env": false}
+2024-10-09 05:14:35,840 - INFO - Cleaning WAEC data...
+2024-10-09 05:14:35,841 - INFO - WAEC data loaded successfully. Number of rows: 1000
+2024-10-09 05:14:35,870 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 05:14:35.867447", "event_id": "b6c9d4c8-b3fb-44b7-bd9b-941dcd4ac255", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "3858f2c0c846c07be58b737ea25fef8b85f62eb37798dd2674c17d72ebdb91f1", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "89a9f8e5-2daf-460a-a9ed-7254050eba2a", "is_known_ci_env": false}
+2024-10-09 05:14:38,108 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:14:38,109 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:14:38,151 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:14:38,152 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:14:38,178 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:14:38,197 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:14:38,197 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:14:38,231 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:14:38,231 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:14:38,260 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:15:01,101 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 40471
+2024-10-09 05:15:33,493 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:15:33,530 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 40365
+2024-10-09 05:16:05,918 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:16:05,920 - INFO - Code server was interrupted
+2024-10-09 05:16:05,920 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 40471
+2024-10-09 05:16:05,971 - INFO - Code server was interrupted
+2024-10-09 05:16:05,971 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 40368
+2024-10-09 05:16:17,533 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 40657
+2024-10-09 05:16:17,533 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 40660
+2024-10-09 05:16:39,759 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:16:39,759 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:16:39,791 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:16:39,791 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:16:39,836 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:16:48,661 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 05:16:48,663 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 05:16:48,663 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 05:16:48,678 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:16:48.661796", "event_id": "3b8e28cb-1d67-4ff1-9483-eccace1feaa0", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "3246def304bfb779750a4c2dde3bd68467828d679782194d949f2b21e487c72b", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "9dad9944-d711-445b-888e-807131e2a15b", "is_known_ci_env": false}
+2024-10-09 05:16:50,878 - INFO - Number of results in first chunk: 0
+2024-10-09 05:16:51,806 - INFO - Number of results in first chunk: 1
+2024-10-09 05:16:51,807 - INFO - closed
+2024-10-09 05:16:51,961 - INFO - No async queries seem to be running, deleting session
+2024-10-09 05:16:52,199 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:16:52.193290", "event_id": "6b42e3f9-07fe-4529-9289-ac75c1f0dc4f", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "3246def304bfb779750a4c2dde3bd68467828d679782194d949f2b21e487c72b", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d", "duration_ms": 3511.533569006133}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "9dad9944-d711-445b-888e-807131e2a15b", "is_known_ci_env": false}
+2024-10-09 05:16:59,613 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:16:59.601067", "event_id": "5493e0e2-ad83-41a7-8117-d46e7bb9f413", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "3246def304bfb779750a4c2dde3bd68467828d679782194d949f2b21e487c72b", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "9dad9944-d711-445b-888e-807131e2a15b", "is_known_ci_env": false}
+2024-10-09 05:16:59,632 - INFO - Cleaning WAEC data...
+2024-10-09 05:16:59,632 - INFO - WAEC data loaded successfully. Number of rows: 1000
+2024-10-09 05:16:59,664 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 05:16:59.659804", "event_id": "9efdc990-192b-4c16-a06d-6052c6ee784d", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "3246def304bfb779750a4c2dde3bd68467828d679782194d949f2b21e487c72b", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "9dad9944-d711-445b-888e-807131e2a15b", "is_known_ci_env": false}
+2024-10-09 05:17:01,894 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:17:01,895 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:17:01,940 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:17:01,940 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:17:01,966 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:17:01,982 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:17:01,982 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:17:02,013 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:17:02,013 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:17:02,043 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:17:20,650 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:17:20,656 - INFO - Code server was interrupted
+2024-10-09 05:17:20,656 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 40657
+2024-10-09 05:17:20,665 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:17:20,667 - INFO - Code server was interrupted
+2024-10-09 05:17:20,667 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 40660
+2024-10-09 05:18:08,377 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 40890
+2024-10-09 05:18:08,378 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 40899
+2024-10-09 05:18:27,159 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:18:27,159 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:18:27,199 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:18:27,200 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:18:27,238 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:18:35,481 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 05:18:35,483 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 05:18:35,483 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 05:18:35,495 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:18:35.481505", "event_id": "49233f30-d7d2-42ff-9070-be8334141b13", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "cede4b3b8869a8198aca3b8183d885ff53c634c7ce991bcd7a7b1d3252b8a0e9", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "30230024-9c8b-4780-95b4-cbdfffa89da5", "is_known_ci_env": false}
+2024-10-09 05:18:38,157 - INFO - Number of results in first chunk: 0
+2024-10-09 05:18:39,003 - INFO - Number of results in first chunk: 1
+2024-10-09 05:18:39,003 - INFO - closed
+2024-10-09 05:18:39,138 - INFO - No async queries seem to be running, deleting session
+2024-10-09 05:18:39,328 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:18:39.325319", "event_id": "cf56b653-eed8-4bde-8564-86bbdae5f090", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "cede4b3b8869a8198aca3b8183d885ff53c634c7ce991bcd7a7b1d3252b8a0e9", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d", "duration_ms": 3842.996712999593}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "30230024-9c8b-4780-95b4-cbdfffa89da5", "is_known_ci_env": false}
+2024-10-09 05:18:49,574 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:18:49.546429", "event_id": "5d60974c-ad59-4762-8c92-c7010cd2c168", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "cede4b3b8869a8198aca3b8183d885ff53c634c7ce991bcd7a7b1d3252b8a0e9", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "30230024-9c8b-4780-95b4-cbdfffa89da5", "is_known_ci_env": false}
+2024-10-09 05:18:49,586 - INFO - Cleaning WAEC data...
+2024-10-09 05:18:49,586 - INFO - WAEC data loaded successfully. Number of rows: 1000
+2024-10-09 05:18:49,628 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 05:18:49.621008", "event_id": "333d6a25-eb01-40ec-8832-aa8800ee0ca0", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "cede4b3b8869a8198aca3b8183d885ff53c634c7ce991bcd7a7b1d3252b8a0e9", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "30230024-9c8b-4780-95b4-cbdfffa89da5", "is_known_ci_env": false}
+2024-10-09 05:18:51,955 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:18:51,956 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:18:52,009 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:18:52,009 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:18:52,041 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:18:52,061 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:18:52,061 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:18:52,099 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:18:52,099 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:18:52,131 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:18:58,198 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:18:58,201 - INFO - Code server was interrupted
+2024-10-09 05:18:58,201 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 40899
+2024-10-09 05:18:58,298 - INFO - Code server was interrupted
+2024-10-09 05:18:58,300 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 40890
+2024-10-09 05:21:01,422 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 41171
+2024-10-09 05:21:01,422 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 41170
+2024-10-09 05:21:21,497 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:21:21,497 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:21:21,545 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:21:21,545 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:21:21,582 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:21:30,046 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 05:21:30,047 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 05:21:30,047 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 05:21:30,061 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:21:30.046501", "event_id": "703aaea9-b21a-48b2-95e4-c47bae163aeb", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:21:31,603 - INFO - Number of results in first chunk: 0
+2024-10-09 05:21:32,690 - INFO - Number of results in first chunk: 1
+2024-10-09 05:21:32,690 - INFO - closed
+2024-10-09 05:21:32,826 - INFO - No async queries seem to be running, deleting session
+2024-10-09 05:21:33,012 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:21:33.008470", "event_id": "fb07912e-8236-4eea-a654-473733bc33ef", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "8d001d4643c9eeaa3fd565038419660ddb5cf8c3aee8cd842271879d9ff63a4d", "duration_ms": 2960.2894709969405}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:21:40,513 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:21:40.477428", "event_id": "d1571408-165f-4642-8d62-cd8164954a79", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:21:40,564 - INFO - Cleaning WAEC data...
+2024-10-09 05:21:40,564 - INFO - WAEC data loaded successfully. Number of rows: 1000
+2024-10-09 05:21:40,622 - INFO - WAEC data cleaned. Number of rows after cleaning: 169
+2024-10-09 05:21:40,677 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:21:40.665887", "event_id": "b189646c-4c83-4c3a-b0a0-63bacab998c5", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "1a506a4dcf8b293c0cb0cc55889314f148b3cca1632b3f014648b386833c731d", "duration_ms": 195.67121100408258}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:21:49,379 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:21:49.365859", "event_id": "ddc2d410-26a3-4348-bd34-01b62448d866", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "b063b1a7871f4d39f632acab71f0ddcc9720a9dad9ddaf334c94816bddd04446"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:21:49,394 - INFO - Filtering alumni data...
+2024-10-09 05:21:49,397 - INFO - Number of rows in alumni_df: 169
+2024-10-09 05:21:49,426 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:21:49.423531", "event_id": "9e9fad63-c46b-4b14-856c-8f5da752de7a", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "b063b1a7871f4d39f632acab71f0ddcc9720a9dad9ddaf334c94816bddd04446", "duration_ms": 57.22662599873729}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:21:56,522 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:21:56.507796", "event_id": "d7b84c72-e47e-443b-b246-e775a86b0c8d", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "7d61c7501dfbd41445de968adac94907a321e4a9557a28901947a71069da5157"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:21:56,536 - INFO - Preparing data for training...
+2024-10-09 05:21:56,540 - INFO - Number of rows after dropping missing 'waec_status': 169
+2024-10-09 05:21:56,545 - INFO - Data split successfully. Training set size: 135, Test set size: 34
+2024-10-09 05:21:56,574 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:21:56.568967", "event_id": "f75d64be-b46a-4f21-87a9-3a909d3ce7c9", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "7d61c7501dfbd41445de968adac94907a321e4a9557a28901947a71069da5157", "duration_ms": 64.10516699543223}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:22:04,033 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:22:04.016150", "event_id": "dc10fbd3-cc5c-4b46-bd03-75373c69c336", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "c4e364c9d4cd60c3a23603692db82ac634216bef8e77c2b4a13fcdd2064657e7"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:22:04,051 - INFO - Training the WAEC model with Grid Search...
+2024-10-09 05:22:13,735 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 41304
+2024-10-09 05:22:19,028 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:22:18.997456", "event_id": "03bde612-7724-4ed7-a36d-3658655b80bb", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "c4e364c9d4cd60c3a23603692db82ac634216bef8e77c2b4a13fcdd2064657e7", "duration_ms": 14979.412404005416}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:22:41,710 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:22:44,721 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 41170
+2024-10-09 05:23:21,684 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 41447
+2024-10-09 05:23:53,987 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:23:53,994 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 41304
+2024-10-09 05:24:29,171 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 41533
+2024-10-09 05:25:01,889 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:25:01,901 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 41447
+2024-10-09 05:25:36,447 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 41611
+2024-10-09 05:26:09,434 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:26:09,441 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 41533
+2024-10-09 05:26:44,051 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 41651
+2024-10-09 05:27:16,624 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:27:16,631 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 41611
+2024-10-09 05:27:29,585 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:27:29.572845", "event_id": "46183fab-dbf0-47f9-ad2a-26175c6eff7d", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "7def9b6bb8894c9e2789a8c93b55cd065df2596de9181f33765bb21f869dd46d"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:27:29,603 - INFO - Evaluating the WAEC model...
+2024-10-09 05:27:29,620 - INFO - Evaluation Results: {'accuracy': 0.5, 'f1_score': np.float64(0.5405405405405406), 'roc_auc': np.float64(0.4965277777777778)}
+2024-10-09 05:27:29,649 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:27:29.645490", "event_id": "fd893cff-ff5f-4e98-9a48-523824778493", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "7def9b6bb8894c9e2789a8c93b55cd065df2596de9181f33765bb21f869dd46d", "duration_ms": 70.89876900136005}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:27:37,691 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:27:37.672994", "event_id": "8e3f99df-17a5-4919-ae72-b9e988c24b48", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "0e2bf56e371428c22b2f0e2789ddc2b5bdd9ed139f52be4dfad60052081cdf29"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:27:37,745 - INFO - Making predictions for current students...
+2024-10-09 05:27:37,803 - INFO - {"action": "step_failure_event", "client_time": "2024-10-09 05:27:37.798484", "event_id": "05ba9397-6397-4968-9f62-f2332f3355c2", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "eab79db434d9dc5661b8dfe38bc1afe4b1b278c08d8d487875d3fa594fe35ee8", "step_key_hash": "0e2bf56e371428c22b2f0e2789ddc2b5bdd9ed139f52be4dfad60052081cdf29"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "8086cad2-109b-47e6-a0c6-095daf57d4ff", "is_known_ci_env": false}
+2024-10-09 05:27:41,412 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:27:41,420 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:27:41,585 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:27:41,585 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:27:41,613 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:27:41,647 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:27:41,647 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:27:41,683 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:27:41,683 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:27:41,728 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:27:51,509 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 41703
+2024-10-09 05:28:02,052 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:28:02,053 - INFO - Code server was interrupted
+2024-10-09 05:28:02,054 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 41703
+2024-10-09 05:28:02,104 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:28:02,108 - INFO - Code server was interrupted
+2024-10-09 05:28:02,108 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 41651
+2024-10-09 05:28:02,325 - INFO - Code server was interrupted
+2024-10-09 05:28:02,325 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 41171
+2024-10-09 05:36:14,278 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 42072
+2024-10-09 05:36:14,278 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 42069
+2024-10-09 05:36:38,435 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:36:38,435 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:36:38,475 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:36:38,476 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:36:38,510 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:36:46,222 - INFO - Snowflake Connector for Python Version: 3.12.2, Python Version: 3.11.3, Platform: macOS-11.7.10-x86_64-i386-64bit
+2024-10-09 05:36:46,224 - INFO - Connecting to GLOBAL Snowflake domain
+2024-10-09 05:36:46,224 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2024-10-09 05:36:46,235 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:36:46.222524", "event_id": "40885fd6-12ea-49a2-a36e-bd7dd68e4a76", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "f3960526a5c15798aef2d8c80ffc53be6ec8a12fccdedadd321cb22fd64aa771", "step_key_hash": "d7d4e9164ef8634e2f41e1cba59af9588389350c1bf6df1e9ac6f08bd4b5f188"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "e0e271bd-aef5-438b-ae3d-fe386daa0ad2", "is_known_ci_env": false}
+2024-10-09 05:36:48,689 - INFO - Number of results in first chunk: 678
+2024-10-09 05:36:49,805 - INFO - Number of results in first chunk: 1
+2024-10-09 05:36:49,805 - INFO - closed
+2024-10-09 05:36:49,947 - INFO - No async queries seem to be running, deleting session
+2024-10-09 05:36:50,132 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:36:50.127648", "event_id": "f6e5c74b-87ce-4a20-b2b9-b6e5340d8c01", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "f3960526a5c15798aef2d8c80ffc53be6ec8a12fccdedadd321cb22fd64aa771", "step_key_hash": "d7d4e9164ef8634e2f41e1cba59af9588389350c1bf6df1e9ac6f08bd4b5f188", "duration_ms": 3902.919401996769}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "e0e271bd-aef5-438b-ae3d-fe386daa0ad2", "is_known_ci_env": false}
+2024-10-09 05:36:57,743 - INFO - {"action": "step_start_event", "client_time": "2024-10-09 05:36:57.731663", "event_id": "eeab5e5d-84d5-4594-8d12-c97840c807c1", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "f3960526a5c15798aef2d8c80ffc53be6ec8a12fccdedadd321cb22fd64aa771", "step_key_hash": "b3deee2572af3e9b2d6cedb079aebd7767aa8cf556e88ac51b1a7787755a2bc4"}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "e0e271bd-aef5-438b-ae3d-fe386daa0ad2", "is_known_ci_env": false}
+2024-10-09 05:36:57,759 - INFO - Training and predicting JAMB data...
+2024-10-09 05:36:58,033 - INFO - {"action": "step_success_event", "client_time": "2024-10-09 05:36:58.029171", "event_id": "fa040dbc-ef8a-4c48-a65b-89bb4ba36439", "elapsed_time": "None", "instance_id": "a4eb7c18-b10a-484f-9d1b-fe5c7286c715", "metadata": {"run_id_hash": "f3960526a5c15798aef2d8c80ffc53be6ec8a12fccdedadd321cb22fd64aa771", "step_key_hash": "b3deee2572af3e9b2d6cedb079aebd7767aa8cf556e88ac51b1a7787755a2bc4", "duration_ms": 294.89153700706083}, "python_version": "3.11.3", "dagster_version": "1.8.10", "os_desc": "macOS-11.7.10-x86_64-i386-64bit", "os_platform": "Darwin", "run_storage_id": "e0e271bd-aef5-438b-ae3d-fe386daa0ad2", "is_known_ci_env": false}
+2024-10-09 05:37:00,523 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:37:00,523 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:37:00,563 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:37:00,563 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:37:00,589 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:37:00,604 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:37:00,604 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:37:00,633 - INFO - Context impl SQLiteImpl.
+2024-10-09 05:37:00,633 - INFO - Will assume non-transactional DDL.
+2024-10-09 05:37:00,657 - INFO - Running stamp_revision  -> 284a732df317
+2024-10-09 05:37:10,780 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:37:10,782 - INFO - Code server was interrupted
+2024-10-09 05:37:10,782 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 42072
+2024-10-09 05:37:11,047 - INFO - Code server was interrupted
+2024-10-09 05:37:11,049 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 42069
+2024-10-09 05:56:40,469 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 42786
+2024-10-09 05:56:40,469 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 42787
+2024-10-09 05:57:48,371 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 42976
+2024-10-09 05:58:20,774 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:58:20,784 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 42786
+2024-10-09 05:58:56,200 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 43130
+2024-10-09 05:59:12,089 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:59:12,092 - INFO - Code server was interrupted
+2024-10-09 05:59:12,093 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 42787
+2024-10-09 05:59:12,161 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:59:12,166 - INFO - Code server was interrupted
+2024-10-09 05:59:12,166 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 42976
+2024-10-09 05:59:12,272 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 05:59:12,279 - INFO - Code server was interrupted
+2024-10-09 05:59:12,279 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 43130
+2024-10-09 06:02:19,287 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 43269
+2024-10-09 06:02:19,287 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 43266
+2024-10-09 06:03:27,498 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 43331
+2024-10-09 06:03:31,549 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 06:03:31,574 - INFO - Code server was interrupted
+2024-10-09 06:03:31,574 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 43331
+2024-10-09 06:03:31,795 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 06:03:31,797 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 06:03:31,802 - INFO - Code server was interrupted
+2024-10-09 06:03:31,802 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 43266
+2024-10-09 06:03:31,816 - INFO - Code server was interrupted
+2024-10-09 06:03:31,817 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 43269
+2024-10-09 06:05:30,485 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 43491
+2024-10-09 06:05:30,485 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 43488
+2024-10-09 06:05:53,230 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 06:05:53,230 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 06:05:53,232 - INFO - Code server was interrupted
+2024-10-09 06:05:53,232 - INFO - Code server was interrupted
+2024-10-09 06:05:53,232 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 43491
+2024-10-09 06:05:53,232 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 43488
+2024-10-09 06:07:38,974 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 43641
+2024-10-09 06:07:38,974 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 43642
+2024-10-09 06:08:23,295 - INFO - Code server was interrupted
+2024-10-09 06:08:23,295 - INFO - Code server was interrupted
+2024-10-09 06:08:23,302 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 06:08:23,303 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 43641
+2024-10-09 06:08:23,303 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 43642
+2024-10-09 06:08:23,305 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 06:12:25,465 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 43919
+2024-10-09 06:12:25,465 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 43920
+2024-10-09 06:13:33,491 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 43989
+2024-10-09 06:14:05,628 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 06:14:08,660 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 43919
+2024-10-09 06:14:13,986 - INFO - Code server was interrupted
+2024-10-09 06:14:13,987 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 43989
+2024-10-09 06:14:13,987 - INFO - Code server was interrupted
+2024-10-09 06:14:13,989 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 43920

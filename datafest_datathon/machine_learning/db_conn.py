@@ -15,11 +15,8 @@ warehouse = os.getenv('SNOWFLAKE_WAREHOUSE')
 
 # Create the connection string
 connection_string = connection_string = f'snowflake://{user}:{password}@{account}/{database}/{schema}?warehouse={warehouse}'
-# print(connection_string)
-# connection_string = (
-#    'snowflake://DATABADDIES2024:%40Databaddies2_@ya78182.eu-west-2.aws/'
-#    'DATAFESTAFRICA/PUBLIC?warehouse=COMPUTE_WH'
-# )
+
+
 # Establish a connection using SQLAlchemy
 def get_engine():
     engine = create_engine(connection_string)

@@ -35,8 +35,8 @@ def load_and_clean_waec_data(waec_df):
     logging.info("WAEC data loaded successfully. Number of rows: %d", len(waec_df))
 
     # Data cleaning and transformation
-    waec_df['offense_count'] = waec_df.groupby('student_id')['student_offence'].transform('count')
-    waec_df.drop_duplicates(subset='student_id', keep='first', inplace=True)
+    waec_df['offense_count'] = waec_df.groupby('student_course_id')['student_offence'].transform('count')
+    waec_df.drop_duplicates(subset='student_course_id', keep='first', inplace=True)
     waec_df = numerical_data(waec_df)
     waec_df = feature_engineering(waec_df)
     waec_df.dropna(inplace=True)

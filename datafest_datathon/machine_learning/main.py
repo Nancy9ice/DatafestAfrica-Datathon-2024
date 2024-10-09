@@ -19,14 +19,7 @@ logging.info("Starting WAEC model training and prediction pipeline...")
 engine = get_engine()
 
 # Define queries
-alumni_query = 'SELECT * FROM "CORE".waec_performance_metrics WHERE student_class = \'Alumni\' LIMIT 1000'
-current_students_query = 'SELECT * FROM "CORE".waec_performance_metrics WHERE student_status = \'Curent Student\' LIMIT 3000'
-
-# Combine the queries with UNION ALL
-waec_query = f"({alumni_query}) UNION ALL ({current_students_query})"
-
-
-
+waec_query = 'SELECT * FROM "CORE".waec_performance_metrics'
 
 logging.basicConfig(level=logging.INFO)
 
