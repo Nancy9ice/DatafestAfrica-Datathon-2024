@@ -90,9 +90,6 @@ def write_waec_predictions_to_snowflake(snowflake: SnowflakeResource, predicted_
             auto_create_table=True,
             overwrite=True,
             quote_identifiers=False,
-        )
-    return MaterializeResult(
-        metadata={"rows_inserted": rows_inserted},
     )
 
 
@@ -132,8 +129,5 @@ def write_jamb_predictions_to_snowflake(snowflake: SnowflakeResource, predicted_
             table_name=table_name,
             auto_create_table=True,
             overwrite=True,
-            quote_identifiers=False,
-        )
-    return MaterializeResult(
-        metadata={"rows_inserted": rows_inserted},
+            quote_identifiers=False
     )

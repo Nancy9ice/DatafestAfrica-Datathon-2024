@@ -6,3 +6,582 @@
 2024-10-09 07:01:33,220 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 46940
 2024-10-09 07:01:33,221 - INFO - Code server was interrupted
 2024-10-09 07:01:33,221 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 46939
+2024-10-09 22:03:35,587 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 275, in __init__
+    repo_def = recon_repo.get_definition()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 120, in get_definition
+    return repository_def_from_pointer(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 779, in repository_def_from_pointer
+    repo_def = repository_def_from_target_def(target, load_type, repository_load_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 740, in repository_def_from_target_def
+    target = target.get_inner_repository()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_utils/cached_method.py", line 104, in _cached_method_wrapper
+    result = method(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 600, in get_inner_repository
+    return _create_repository_using_definitions_args(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 290, in _create_repository_using_definitions_args
+    @repository(
+     ^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/repository_decorator.py", line 163, in __call__
+    repository_data = CachingRepositoryData.from_list(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data.py", line 382, in from_list
+    return build_caching_repository_data_from_list(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data_builder.py", line 317, in build_caching_repository_data_from_list
+    asset_graph = AssetGraph.from_assets(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 248, in from_assets
+    assets_defs = cls.normalize_assets(assets)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 204, in normalize_assets
+    resolved_deps = ResolvedAssetDependencies(assets_defs, [])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 23, in __init__
+    self._deps_by_assets_def_id = resolve_assets_def_deps(assets_defs, source_assets)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 206, in resolve_assets_def_deps
+    raise DagsterInvalidDefinitionError(msg)
+dagster._core.errors.DagsterInvalidDefinitionError: Input asset '["predicted_students_df"]' for asset '["write_jamb_predictions_to_snowflake"]' is not produced by any of the provided asset ops and is not one of the provided sources.
+2024-10-09 22:03:35,587 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 275, in __init__
+    repo_def = recon_repo.get_definition()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 120, in get_definition
+    return repository_def_from_pointer(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 779, in repository_def_from_pointer
+    repo_def = repository_def_from_target_def(target, load_type, repository_load_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 740, in repository_def_from_target_def
+    target = target.get_inner_repository()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_utils/cached_method.py", line 104, in _cached_method_wrapper
+    result = method(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 600, in get_inner_repository
+    return _create_repository_using_definitions_args(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 290, in _create_repository_using_definitions_args
+    @repository(
+     ^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/repository_decorator.py", line 163, in __call__
+    repository_data = CachingRepositoryData.from_list(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data.py", line 382, in from_list
+    return build_caching_repository_data_from_list(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data_builder.py", line 317, in build_caching_repository_data_from_list
+    asset_graph = AssetGraph.from_assets(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 248, in from_assets
+    assets_defs = cls.normalize_assets(assets)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 204, in normalize_assets
+    resolved_deps = ResolvedAssetDependencies(assets_defs, [])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 23, in __init__
+    self._deps_by_assets_def_id = resolve_assets_def_deps(assets_defs, source_assets)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 206, in resolve_assets_def_deps
+    raise DagsterInvalidDefinitionError(msg)
+dagster._core.errors.DagsterInvalidDefinitionError: Input asset '["predicted_students_df"]' for asset '["write_jamb_predictions_to_snowflake"]' is not produced by any of the provided asset ops and is not one of the provided sources.
+2024-10-09 22:03:35,603 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 55191
+2024-10-09 22:03:35,603 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 55192
+2024-10-09 22:03:52,562 - INFO - Code server was interrupted
+2024-10-09 22:03:52,562 - INFO - Code server was interrupted
+2024-10-09 22:03:52,562 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 55191
+2024-10-09 22:03:52,562 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 55192
+2024-10-09 22:16:18,906 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 275, in __init__
+    repo_def = recon_repo.get_definition()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 120, in get_definition
+    return repository_def_from_pointer(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 779, in repository_def_from_pointer
+    repo_def = repository_def_from_target_def(target, load_type, repository_load_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 740, in repository_def_from_target_def
+    target = target.get_inner_repository()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_utils/cached_method.py", line 104, in _cached_method_wrapper
+    result = method(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 600, in get_inner_repository
+    return _create_repository_using_definitions_args(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 290, in _create_repository_using_definitions_args
+    @repository(
+     ^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/repository_decorator.py", line 163, in __call__
+    repository_data = CachingRepositoryData.from_list(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data.py", line 382, in from_list
+    return build_caching_repository_data_from_list(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data_builder.py", line 317, in build_caching_repository_data_from_list
+    asset_graph = AssetGraph.from_assets(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 248, in from_assets
+    assets_defs = cls.normalize_assets(assets)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 204, in normalize_assets
+    resolved_deps = ResolvedAssetDependencies(assets_defs, [])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 23, in __init__
+    self._deps_by_assets_def_id = resolve_assets_def_deps(assets_defs, source_assets)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 206, in resolve_assets_def_deps
+    raise DagsterInvalidDefinitionError(msg)
+dagster._core.errors.DagsterInvalidDefinitionError: Input asset '["predicted_jamb_students"]' for asset '["write_jamb_predictions_to_snowflake"]' is not produced by any of the provided asset ops and is not one of the provided sources.
+2024-10-09 22:16:18,906 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 275, in __init__
+    repo_def = recon_repo.get_definition()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 120, in get_definition
+    return repository_def_from_pointer(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 779, in repository_def_from_pointer
+    repo_def = repository_def_from_target_def(target, load_type, repository_load_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 740, in repository_def_from_target_def
+    target = target.get_inner_repository()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_utils/cached_method.py", line 104, in _cached_method_wrapper
+    result = method(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 600, in get_inner_repository
+    return _create_repository_using_definitions_args(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 290, in _create_repository_using_definitions_args
+    @repository(
+     ^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/repository_decorator.py", line 163, in __call__
+    repository_data = CachingRepositoryData.from_list(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data.py", line 382, in from_list
+    return build_caching_repository_data_from_list(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data_builder.py", line 317, in build_caching_repository_data_from_list
+    asset_graph = AssetGraph.from_assets(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 248, in from_assets
+    assets_defs = cls.normalize_assets(assets)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 204, in normalize_assets
+    resolved_deps = ResolvedAssetDependencies(assets_defs, [])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 23, in __init__
+    self._deps_by_assets_def_id = resolve_assets_def_deps(assets_defs, source_assets)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 206, in resolve_assets_def_deps
+    raise DagsterInvalidDefinitionError(msg)
+dagster._core.errors.DagsterInvalidDefinitionError: Input asset '["predicted_jamb_students"]' for asset '["write_jamb_predictions_to_snowflake"]' is not produced by any of the provided asset ops and is not one of the provided sources.
+2024-10-09 22:16:18,928 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 55734
+2024-10-09 22:16:18,928 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 55735
+2024-10-09 22:16:21,923 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 22:16:21,923 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 22:16:21,925 - INFO - Code server was interrupted
+2024-10-09 22:16:21,925 - INFO - Code server was interrupted
+2024-10-09 22:16:21,925 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 55734
+2024-10-09 22:16:21,925 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 55735
+2024-10-09 22:21:50,368 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 275, in __init__
+    repo_def = recon_repo.get_definition()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 120, in get_definition
+    return repository_def_from_pointer(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 779, in repository_def_from_pointer
+    repo_def = repository_def_from_target_def(target, load_type, repository_load_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 740, in repository_def_from_target_def
+    target = target.get_inner_repository()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_utils/cached_method.py", line 104, in _cached_method_wrapper
+    result = method(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 600, in get_inner_repository
+    return _create_repository_using_definitions_args(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 290, in _create_repository_using_definitions_args
+    @repository(
+     ^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/repository_decorator.py", line 163, in __call__
+    repository_data = CachingRepositoryData.from_list(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data.py", line 382, in from_list
+    return build_caching_repository_data_from_list(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data_builder.py", line 317, in build_caching_repository_data_from_list
+    asset_graph = AssetGraph.from_assets(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 248, in from_assets
+    assets_defs = cls.normalize_assets(assets)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 204, in normalize_assets
+    resolved_deps = ResolvedAssetDependencies(assets_defs, [])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 23, in __init__
+    self._deps_by_assets_def_id = resolve_assets_def_deps(assets_defs, source_assets)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 206, in resolve_assets_def_deps
+    raise DagsterInvalidDefinitionError(msg)
+dagster._core.errors.DagsterInvalidDefinitionError: Input asset '["jamb_data"]' for asset '["train_and_predict_jamb_data"]' is not produced by any of the provided asset ops and is not one of the provided sources.
+2024-10-09 22:21:50,368 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 275, in __init__
+    repo_def = recon_repo.get_definition()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 120, in get_definition
+    return repository_def_from_pointer(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 779, in repository_def_from_pointer
+    repo_def = repository_def_from_target_def(target, load_type, repository_load_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 740, in repository_def_from_target_def
+    target = target.get_inner_repository()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_utils/cached_method.py", line 104, in _cached_method_wrapper
+    result = method(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 600, in get_inner_repository
+    return _create_repository_using_definitions_args(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 290, in _create_repository_using_definitions_args
+    @repository(
+     ^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/repository_decorator.py", line 163, in __call__
+    repository_data = CachingRepositoryData.from_list(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data.py", line 382, in from_list
+    return build_caching_repository_data_from_list(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data_builder.py", line 317, in build_caching_repository_data_from_list
+    asset_graph = AssetGraph.from_assets(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 248, in from_assets
+    assets_defs = cls.normalize_assets(assets)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 204, in normalize_assets
+    resolved_deps = ResolvedAssetDependencies(assets_defs, [])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 23, in __init__
+    self._deps_by_assets_def_id = resolve_assets_def_deps(assets_defs, source_assets)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 206, in resolve_assets_def_deps
+    raise DagsterInvalidDefinitionError(msg)
+dagster._core.errors.DagsterInvalidDefinitionError: Input asset '["jamb_data"]' for asset '["train_and_predict_jamb_data"]' is not produced by any of the provided asset ops and is not one of the provided sources.
+2024-10-09 22:21:50,384 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 55960
+2024-10-09 22:21:50,384 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 55963
+2024-10-09 22:22:10,491 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 22:22:10,511 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 55960
+2024-10-09 22:22:35,658 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 22:22:35,659 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 55963
+2024-10-09 22:22:58,149 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 275, in __init__
+    repo_def = recon_repo.get_definition()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 120, in get_definition
+    return repository_def_from_pointer(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 779, in repository_def_from_pointer
+    repo_def = repository_def_from_target_def(target, load_type, repository_load_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/reconstruct.py", line 740, in repository_def_from_target_def
+    target = target.get_inner_repository()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_utils/cached_method.py", line 104, in _cached_method_wrapper
+    result = method(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 600, in get_inner_repository
+    return _create_repository_using_definitions_args(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 290, in _create_repository_using_definitions_args
+    @repository(
+     ^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/repository_decorator.py", line 163, in __call__
+    repository_data = CachingRepositoryData.from_list(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data.py", line 382, in from_list
+    return build_caching_repository_data_from_list(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/repository_definition/repository_data_builder.py", line 317, in build_caching_repository_data_from_list
+    asset_graph = AssetGraph.from_assets(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 248, in from_assets
+    assets_defs = cls.normalize_assets(assets)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/asset_graph.py", line 204, in normalize_assets
+    resolved_deps = ResolvedAssetDependencies(assets_defs, [])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 23, in __init__
+    self._deps_by_assets_def_id = resolve_assets_def_deps(assets_defs, source_assets)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/resolved_asset_deps.py", line 206, in resolve_assets_def_deps
+    raise DagsterInvalidDefinitionError(msg)
+dagster._core.errors.DagsterInvalidDefinitionError: Input asset '["jamb_data"]' for asset '["train_and_predict_jamb_data"]' is not produced by any of the provided asset ops and is not one of the provided sources.
+2024-10-09 22:22:58,157 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 56097
+2024-10-09 22:23:18,257 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 22:23:18,259 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 56097
+2024-10-09 22:23:38,744 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 255, in __init__
+    loadable_targets = get_loadable_targets(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/utils.py", line 60, in get_loadable_targets
+    else loadable_targets_from_python_package(package_name, working_directory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/workspace/autodiscovery.py", line 44, in loadable_targets_from_python_package
+    module = load_python_module(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 134, in load_python_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/definitions.py", line 8, in <module>
+    from datafest_datathon.ml_jobs import waec_pipeline, jamb_pipeline
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py", line 2, in <module>
+    from datafest_datathon.assets.ml_assets import (
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/assets/ml_assets.py", line 118, in <module>
+    @asset(deps=["jamb_data"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/asset_decorator.py", line 286, in inner
+    return create_assets_def_from_fn_and_decorator_args(args, fn)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/asset_decorator.py", line 473, in create_assets_def_from_fn_and_decorator_args
+    builder = DecoratorAssetsDefinitionBuilder.from_asset_outs_in_asset_centric_decorator(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/decorator_assets_definition_builder.py", line 407, in from_asset_outs_in_asset_centric_decorator
+    named_ins_by_asset_key = build_named_ins(
+                             ^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/decorator_assets_definition_builder.py", line 134, in build_named_ins
+    raise DagsterInvalidDefinitionError(
+dagster._core.errors.DagsterInvalidDefinitionError: deps value AssetKey(['jamb_data']) also declared as input/AssetIn
+2024-10-09 22:23:38,744 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 255, in __init__
+    loadable_targets = get_loadable_targets(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/utils.py", line 60, in get_loadable_targets
+    else loadable_targets_from_python_package(package_name, working_directory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/workspace/autodiscovery.py", line 44, in loadable_targets_from_python_package
+    module = load_python_module(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 134, in load_python_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/definitions.py", line 8, in <module>
+    from datafest_datathon.ml_jobs import waec_pipeline, jamb_pipeline
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/ml_jobs.py", line 2, in <module>
+    from datafest_datathon.assets.ml_assets import (
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/assets/ml_assets.py", line 118, in <module>
+    @asset(deps=["jamb_data"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/asset_decorator.py", line 286, in inner
+    return create_assets_def_from_fn_and_decorator_args(args, fn)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/asset_decorator.py", line 473, in create_assets_def_from_fn_and_decorator_args
+    builder = DecoratorAssetsDefinitionBuilder.from_asset_outs_in_asset_centric_decorator(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/decorator_assets_definition_builder.py", line 407, in from_asset_outs_in_asset_centric_decorator
+    named_ins_by_asset_key = build_named_ins(
+                             ^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/decorators/decorator_assets_definition_builder.py", line 134, in build_named_ins
+    raise DagsterInvalidDefinitionError(
+dagster._core.errors.DagsterInvalidDefinitionError: deps value AssetKey(['jamb_data']) also declared as input/AssetIn
+2024-10-09 22:23:38,755 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 56224
+2024-10-09 22:23:38,755 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 56226
+2024-10-09 22:23:58,867 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 22:23:58,869 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 56224
+2024-10-09 22:24:07,947 - INFO - Stopping server once all current RPC calls terminate or 60 seconds pass
+2024-10-09 22:24:07,949 - INFO - Code server was interrupted
+2024-10-09 22:24:07,949 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 56226
+2024-10-09 22:25:09,866 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/errors.py", line 287, in user_code_error_boundary
+    yield
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 255, in __init__
+    loadable_targets = get_loadable_targets(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/utils.py", line 60, in get_loadable_targets
+    else loadable_targets_from_python_package(package_name, working_directory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/workspace/autodiscovery.py", line 44, in loadable_targets_from_python_package
+    module = load_python_module(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 134, in load_python_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/definitions.py", line 20, in <module>
+    defs = Definitions(
+           ^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 450, in __new__
+    return super().__new__(
+           ^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_record/__init__.py", line 435, in __call__
+    return compiled_fn(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 7, in __checked_new__
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_check/functions.py", line 1218, in opt_nullable_iterable_param
+    return iterable_param(obj, param_name, of_type, additional_message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_check/functions.py", line 1194, in iterable_param
+    return _check_iterable_items(obj, of_type, "iterable")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_check/functions.py", line 1783, in _check_iterable_items
+    raise CheckError(
+dagster._check.functions.CheckError: Member of iterable mismatches type. Expected (<class 'dagster._core.definitions.assets.AssetsDefinition'>, <class 'dagster._core.definitions.asset_spec.AssetSpec'>, <class 'dagster._core.definitions.source_asset.SourceAsset'>, <class 'dagster._core.definitions.cacheable_assets.CacheableAssetsDefinition'>). Got <dagster._core.definitions.op_definition.OpDefinition object at 0x1341dc8d0> of type <class 'dagster._core.definitions.op_definition.OpDefinition'>.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 244, in __init__
+    with user_code_error_boundary(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/errors.py", line 297, in user_code_error_boundary
+    raise new_error from e
+dagster._core.errors.DagsterUserCodeLoadError: Error occurred during the loading of Dagster definitions in
+executable_path=/Users/nancyamandi/datafest_datathon_2024/datafest_venv/bin/python3.11, working_directory=/Users/nancyamandi/datafest_datathon_2024, package_name=datafest_datathon.definitions
+2024-10-09 22:25:09,866 - ERROR - Error while importing code
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/errors.py", line 287, in user_code_error_boundary
+    yield
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 255, in __init__
+    loadable_targets = get_loadable_targets(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/utils.py", line 60, in get_loadable_targets
+    else loadable_targets_from_python_package(package_name, working_directory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/workspace/autodiscovery.py", line 44, in loadable_targets_from_python_package
+    module = load_python_module(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/code_pointer.py", line 134, in load_python_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_datathon/definitions.py", line 20, in <module>
+    defs = Definitions(
+           ^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/definitions/definitions_class.py", line 450, in __new__
+    return super().__new__(
+           ^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_record/__init__.py", line 435, in __call__
+    return compiled_fn(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 7, in __checked_new__
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_check/functions.py", line 1218, in opt_nullable_iterable_param
+    return iterable_param(obj, param_name, of_type, additional_message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_check/functions.py", line 1194, in iterable_param
+    return _check_iterable_items(obj, of_type, "iterable")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_check/functions.py", line 1783, in _check_iterable_items
+    raise CheckError(
+dagster._check.functions.CheckError: Member of iterable mismatches type. Expected (<class 'dagster._core.definitions.assets.AssetsDefinition'>, <class 'dagster._core.definitions.asset_spec.AssetSpec'>, <class 'dagster._core.definitions.source_asset.SourceAsset'>, <class 'dagster._core.definitions.cacheable_assets.CacheableAssetsDefinition'>). Got <dagster._core.definitions.op_definition.OpDefinition object at 0x1392a5850> of type <class 'dagster._core.definitions.op_definition.OpDefinition'>.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 421, in __init__
+    self._loaded_repositories: Optional[LoadedRepositories] = LoadedRepositories(
+                                                              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_grpc/server.py", line 244, in __init__
+    with user_code_error_boundary(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/nancyamandi/datafest_datathon_2024/datafest_venv/lib/python3.11/site-packages/dagster/_core/errors.py", line 297, in user_code_error_boundary
+    raise new_error from e
+dagster._core.errors.DagsterUserCodeLoadError: Error occurred during the loading of Dagster definitions in
+executable_path=/Users/nancyamandi/datafest_datathon_2024/datafest_venv/bin/python3.11, working_directory=/Users/nancyamandi/datafest_datathon_2024, package_name=datafest_datathon.definitions
+2024-10-09 22:25:09,878 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 56403
+2024-10-09 22:25:09,878 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 56405
+2024-10-09 22:25:25,354 - INFO - Code server was interrupted
+2024-10-09 22:25:25,354 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 56403
+2024-10-09 22:25:25,354 - INFO - Code server was interrupted
+2024-10-09 22:25:25,355 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 56405
+2024-10-09 22:25:55,215 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 56549
+2024-10-09 22:25:55,215 - INFO - Started Dagster code server for package datafest_datathon.definitions in process 56552
+2024-10-09 22:25:58,612 - INFO - Code server was interrupted
+2024-10-09 22:25:58,612 - INFO - Code server was interrupted
+2024-10-09 22:25:58,612 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 56549
+2024-10-09 22:25:58,612 - INFO - Shutting down Dagster code server for package datafest_datathon.definitions in process 56552
