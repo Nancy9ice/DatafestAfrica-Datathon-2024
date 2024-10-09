@@ -1,0 +1,7 @@
+# List of dependencies
+pandas
+numpy
+scikit-learn
+matplotlib
+sqlalchemy
+imbalanced-learn
