@@ -14,3 +14,4 @@ imbalanced-learn==0.12.4
 snowflake-sqlalchemy==1.6.1
 dagster-snowflake==0.24.10
 snowflake-connector-python==3.12.2
+pyarrow==17.0.0
