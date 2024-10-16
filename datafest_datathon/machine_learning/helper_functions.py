@@ -39,7 +39,7 @@ def load_and_clean_waec_data(waec_df):
     waec_df.drop_duplicates(subset='student_course_id', keep='first', inplace=True)
     waec_df = numerical_data(waec_df)
     waec_df = feature_engineering(waec_df)
-    waec_df.dropna(inplace=True)
+    # waec_df.dropna(inplace=True)
     
     logging.info("WAEC data cleaned. Number of rows after cleaning: %d", len(waec_df))
     return waec_df
@@ -219,11 +219,3 @@ def train_and_predict_jamb(jamb):
 
     # Return the predictions
     return jamb_not_written[['student_id', 'predicted_status']]
-
-
-#def write_data_to_csv(engine, df, table_name, if_exists='replace'):
-    #try:
-     #   df.to_sql(table_name, con=engine, index=False, if_exists=if_exists)
-      #  print(f"Data written to {table_name} successfully.")
-    #except Exception as e:
-     #   print(f"Error writing data to {table_name}:", e)
