@@ -85,7 +85,7 @@ def write_waec_predictions_to_snowflake(snowflake: SnowflakeResource, predicted_
         table_name = "Waec_Predicted_Performance"
         success, number_chunks, rows_inserted, output = write_pandas(
             conn,
-            predicted_students_df[['student_id', 'predicted_status']],
+            predicted_students_df[['student_id', 'predicted_waec_status']],
             table_name=table_name,
             auto_create_table=True,
             overwrite=True,
