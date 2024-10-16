@@ -89,8 +89,7 @@ def predict_for_current_students(evaluate_waec_model, clean_waec_data: pd.DataFr
 @asset
 def write_waec_predictions_to_snowflake(snowflake: SnowflakeResource, predict_for_current_students: pd.DataFrame):
     with snowflake.get_connection() as conn:
-        schema_name = "INTERMEDIATE"
-        table_name = f"{schema_name}.Waec_Predicted_Performance"
+        table_name = "Waec_Predicted_Performance"
         success, number_chunks, rows_inserted, output = write_pandas(
             conn,
             predict_for_current_students[['student_id', 'predicted_waec_status']],  # Ensure DataFrame has these columns
@@ -134,8 +133,7 @@ def train_and_predict_jamb_data(jamb_data):
 @asset
 def write_jamb_predictions_to_snowflake(snowflake: SnowflakeResource, train_and_predict_jamb_data: pd.DataFrame):
     with snowflake.get_connection() as conn:
-        schema_name = "INTERMEDIATE"
-        table_name = f"{schema_name}.Jamb_Predicted_Performance"
+        table_name = "Jamb_Predicted_Performance"
         success, number_chunks, rows_inserted, output = write_pandas(
             conn,
             train_and_predict_jamb_data[['student_id', 'predicted_status']],  # Ensure correct columns are present

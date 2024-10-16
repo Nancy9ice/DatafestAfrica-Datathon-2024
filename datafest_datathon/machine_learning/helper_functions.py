@@ -139,6 +139,8 @@ def predict_current_students(model, current_df):
     numfeature = current_df.select_dtypes(exclude=['object'])
     X_new = numfeature.drop(columns=['waec_status', 'student_id', 'department_focus', 'student_course_id', 'course_id', 'waec_exam_year'], errors='ignore')
     current_df['predicted_waec_status'] = model.predict(X_new)
+    # Map predicted values (0 -> 'Fail', 1 -> 'Pass')
+    current_df['predicted_waec_status'] = current_df['predicted_waec_status'].map({0: 'Fail', 1: 'Pass'})
     return current_df
 
 
@@ -216,6 +218,8 @@ def train_and_predict_jamb(jamb):
 
     # Attach predictions to the original data for students who haven't written JAMB
     jamb_not_written['predicted_status'] = jamb_predictions
+    # Map predicted values (0 -> 'Fail', 1 -> 'Pass')
+    jamb_not_written['predicted_status'] = jamb_not_written['predicted_status'].map({0: 'Fail', 1: 'Pass'})
 
     # Return the predictions
     return jamb_not_written[['student_id', 'predicted_status']]

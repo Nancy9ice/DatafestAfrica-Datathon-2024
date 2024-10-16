@@ -58,7 +58,18 @@ SELECT
         WHEN polls.number_of_votes IS NULL THEN 0
         ELSE polls.number_of_votes
     END AS number_of_votes,
-    COUNT(discipline.student_offence) AS offence_count,
+    CASE 
+        WHEN discipline.student_offence IS NULL THEN 'None'
+        ELSE discipline.student_offence
+    END AS student_offence,
+    CASE 
+        WHEN discipline.disciplinary_action_taken IS NULL THEN 'None'
+        ELSE discipline.disciplinary_action_taken
+    END AS disciplinary_action_taken,
+    CASE 
+        WHEN teacher.full_name IS NULL THEN 'None'
+        ELSE teacher.full_name
+    END AS disciplinary_teacher,
     average_student_score,
     CASE 
         WHEN average_student_score >= 50 THEN 'Pass'
@@ -77,6 +88,8 @@ LEFT JOIN {{ ref('stg_parents') }} parents
     ON parents.parent_id = students.parent_id
 LEFT JOIN {{ ref('stg_disciplinary_records') }} discipline
     ON discipline.student_id = students.student_id
+LEFT JOIN {{ ref('stg_teachers') }} teacher
+    ON discipline.teacher_id = teacher.teacher_id
 LEFT JOIN {{ ref('stg_student_polls') }} polls
     ON teacher.teacher_id = polls.related_teacher_id
 LEFT JOIN school_grades
