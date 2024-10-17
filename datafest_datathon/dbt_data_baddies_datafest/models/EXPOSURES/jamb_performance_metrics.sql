@@ -48,6 +48,7 @@ SELECT DISTINCT
     students.student_id,
     students.student_class,
     students.student_status,
+    students.health_condition,
     department,
     gender,
     parents.full_name AS student_parent,
