@@ -181,7 +181,7 @@ def train_and_predict_jamb(jamb):
     X = jamb.drop(columns=[
         'student_id', 'jamb_score', 'jamb_exam_year', 'jamb_performance', 'student_class', 'student_status', 
         'department', 'student_parent', 'student_extracurricular_activity', 'disciplinary_action_taken', 
-        'disciplinary_teacher', 'jamb_exam_year'
+        'disciplinary_teacher', 'jamb_exam_year', 'student_name'
     ])
     y = (jamb['jamb_performance'] == 'Pass').astype(int)  # Convert to binary: 1 if 'Pass', 0 otherwise
 
