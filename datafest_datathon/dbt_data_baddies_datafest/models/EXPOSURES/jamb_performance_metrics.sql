@@ -46,6 +46,7 @@ aggregated_attendance AS (
 
 SELECT DISTINCT
     students.student_id,
+    students.full_name AS student_name,
     students.student_class,
     students.student_status,
     students.health_condition,
