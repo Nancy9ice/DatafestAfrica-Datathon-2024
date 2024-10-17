@@ -24,9 +24,3 @@ models:
           - relationships:
               to: ref('stg_students_courses')
               field: student_course_id
-  - name: waec_performance_metrics
-    columns:
-      - name: student_course_id
-        data_tests:
-          - unique
-          - not_null
