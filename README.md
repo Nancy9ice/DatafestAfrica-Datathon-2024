@@ -87,6 +87,18 @@ cd ..
 export PYTHONPATH="<venv full path>/lib/$PYTHONVERSION/site-packages:$PYTHONPATH"
 ```
 
+- Ensure you have the following environment variables defined in a .env file in the root folder
+```bash
+SNOWFLAKE_ACCOUNT
+SNOWFLAKE_PASSWORD
+SNOWFLAKE_USER
+SNOWFLAKE_DATABASE
+SNOWFLAKE_SCHEMA
+SNOWFLAKE_WAREHOUSE
+AIRBYTE_CLIENT_ID
+AIRBYTE_CLIENT_SECRET
+```
+
 - Launch your Dagster environment
 
 ```bash
