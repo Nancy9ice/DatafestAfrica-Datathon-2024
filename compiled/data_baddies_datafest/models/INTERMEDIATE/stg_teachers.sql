@@ -8,4 +8,4 @@ SELECT DISTINCT
     TO_CHAR(CAST(created_at AS DATE), 'YYYYMMDD') AS employment_date_id,
     updated_at as updated_employment_date,
     TO_CHAR(CAST(updated_at AS DATE), 'YYYYMMDD') AS updated_employment_date_id
-FROM datafestafrica.RAW.raw_teachers
+FROM DATAFESTAFRICA.RAW.raw_teachers

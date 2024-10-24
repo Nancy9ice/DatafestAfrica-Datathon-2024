@@ -6,4 +6,4 @@ SELECT DISTINCT
     title as assessment_type,
     sort_order,
     points as overall_score
-FROM datafestafrica.RAW.raw_marking_periods
+FROM DATAFESTAFRICA.RAW.raw_marking_periods

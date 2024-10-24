@@ -11,4 +11,4 @@ SELECT DISTINCT
     published_date,
     TO_CHAR(CAST(published_date AS DATE), 'YYYYMMDD') AS published_date_id,
     students_teacher_id AS related_teacher_id
-FROM datafestafrica.RAW.raw_portal_polls
+FROM DATAFESTAFRICA.RAW.raw_portal_polls

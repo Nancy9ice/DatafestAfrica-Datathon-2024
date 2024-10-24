@@ -16,4 +16,4 @@ SELECT DISTINCT
     TO_CHAR(CAST(created_at AS DATE), 'YYYYMMDD') AS course_created_date_id,
     updated_at as course_updated_at,
     TO_CHAR(CAST(updated_at AS DATE), 'YYYYMMDD') AS course_updated_date_id
-FROM datafestafrica.RAW.raw_courses
+FROM DATAFESTAFRICA.RAW.raw_courses

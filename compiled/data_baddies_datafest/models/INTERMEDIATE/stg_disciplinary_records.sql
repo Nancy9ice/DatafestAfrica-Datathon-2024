@@ -9,4 +9,4 @@ SELECT DISTINCT
     TO_CHAR(CAST(referral_date AS DATE), 'YYYYMMDD') AS disciplinary_date_id,
     offence as student_offence,
     action_taken as disciplinary_action_taken
-FROM datafestafrica.RAW.raw_discipline_referrals
+FROM DATAFESTAFRICA.RAW.raw_discipline_referrals

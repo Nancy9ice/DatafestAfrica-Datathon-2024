@@ -1,0 +1,8 @@
+datafest_datathon/
+datafest_datathon.egg-info/
+datafest_venv/
+tmp*/
+.env
+waec_model_run.log
+partial_parse.msgpack
+my_dbt_assets*
