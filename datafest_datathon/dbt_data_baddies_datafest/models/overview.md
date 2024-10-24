@@ -290,4 +290,6 @@ If you're interested in adopting our solution for your school, feel free to reac
 
 [Nancy Amandi](https://www.linkedin.com/in/nancy-amandi/) - Data Engineer
 
+[**GitHub Repo**](https://github.com/Nancy9ice/DatafestAfrica-Datathon-2024)
+
 {% enddocs %}
