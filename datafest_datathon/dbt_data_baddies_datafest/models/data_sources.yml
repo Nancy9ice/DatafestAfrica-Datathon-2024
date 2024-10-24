@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: data_baddies_datafest
     description: "These are RAW tables in the mysql transactional database of Rosariosis extracted by Airbyte"
-    database: datafestafrica
+    database: DATAFESTAFRICA
     schema: RAW
     tables:
       - name: raw_attendance_day
