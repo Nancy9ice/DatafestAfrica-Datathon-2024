@@ -60,10 +60,27 @@ python -m venv venv_name
 pip install -r requirements.txt
 ```
 
+- Change Directory
+
+```bash
+cd datafest_datathon
+```
+
 - Build the project module
 
 ```bash
 pip install -e ".[dev]"
+```
+
+- Change Directory to root folder
+
+```bash
+cd ..
+```
+
+- Don't forget to add the python executable path of your environment to path
+```bash
+export PYTHONPATH="<venv full path>/lib/$PYTHONVERSION/site-packages:$PYTHONPATH"
 ```
 
 - Launch your Dagster environment

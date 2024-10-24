@@ -6,7 +6,7 @@ dagster-cloud-cli==1.8.10
 dagster-airbyte==0.24.10
 dagster-dbt==0.24.10
 pandas==2.2.3
-numpy==2.1.2
+numpy==1.26.4
 scikit-learn==1.5.2
 matplotlib==3.9.0
 sqlalchemy==2.0.35
@@ -14,4 +14,4 @@ imbalanced-learn==0.12.4
 snowflake-sqlalchemy==1.6.1
 dagster-snowflake==0.24.10
 snowflake-connector-python==3.12.2
-pyarrow==17.0.0
+pyarrow==15.0.0
