@@ -12,13 +12,17 @@ This is a project built by the Data Baddies team (Olaminike Olaiya and Nancy Ama
 
 - Machine Learning: Python
 
-- Reporting and Visualization: PowerBI
+- Reporting and Visualization: Metabase
 
 - Pipeline Orchestration: Dagster
 
 This Github project contains codes on dbt, Dagster and Python (machine learning). 
 
 The dbt and machine learning projects are wrapped in the dagster orchestration code.
+
+## Project Documentation
+
+You can access the detailed [project documentation here](https://nancy9ice.github.io/DatafestAfrica-Datathon-2024)
 
 ## How to Build this Project
 
