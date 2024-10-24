@@ -1,5 +1,7 @@
 {% docs __overview__ %}
 
+# Project Documentation
+
 This project is an end-to-end solution built by the Data Baddies team for the DatafestAfrica 2024 Datathon comprising of [Olaminike Olaiya](https://www.linkedin.com/in/olaminike-olaiya-821b66224/), the data scientist, and [Nancy Amandi](https://www.linkedin.com/in/nancy-amandi/), the data engineer.
 
 # Problem Statement
@@ -40,7 +42,8 @@ While choosing this solution approach and the tools involved, we considered seve
 
 - No complex transformation involved: There were no complex transformations involved in the data processing so we chose to use dbt that is built on the basis of SQL.
 
-![Architecture Diagram](../../../images/datafest_architectural_diagram.png)
+![Architecture Diagram](../assets/datafest_architectural_diagram.png)
+
 
 ## Data Gathering
 
@@ -56,7 +59,7 @@ To address the issue of scattered written school records that risk being lost, w
 
 This system will help Zacrac High School secure its records and manage its data more efficiently, ensuring smoother day-to-day operations and better performance tracking.
 
-![Rosariosis Interface](<../../../images/Rosariosis Interface.png>)
+![Rosariosis Interface](../assets/Rosariosis Interface.png)
 
 Setting up the Rosariosis software automatically created tables in the linked database. These tables gave us the basis of the kind of information needed in a secondary school. However, because these tables were plenty and more than 80 tables, we decided to use some tables that were relevant to this project. Our choice of tables was mostly associated with the day-to-day activities of the school.
 
@@ -100,7 +103,7 @@ It is important to note that some of these tables were added for the sake of thi
 
 The image below is the Entity Relationship Diagram between the tables in the database. 
 
-![OLTP ERD Diagram](../../../images/OLTP-ERD-Diagram-DatafestAfrica.png)
+![OLTP ERD Diagram](../assets/OLTP-ERD-Diagram-DatafestAfrica.png)
 
 To further explore the tables and their relationships in the diagram, you can visit [this link](https://dbdocs.io/amandinancy16/OLTP-ERD-Diagram-DatafestAfrica).
 
@@ -209,7 +212,7 @@ Imagine a teacher sitting down to check on the progress of their class. They nee
 
 For example, if a teacher sees that a student’s attendance rate is dropping, they can immediately intervene by contacting the student or parent to see what’s going on.
 
-[![Student Dashboard Overview](../../../images/Student_Dashboard_1.png)](https://data-baddies.metabaseapp.com/public/dashboard/3bd7b96c-82c3-4866-97a8-a7fe9c74cd70)
+[![Student Dashboard Overview](../assets/Student_Dashboard_1.png)](https://data-baddies.metabaseapp.com/public/dashboard/3bd7b96c-82c3-4866-97a8-a7fe9c74cd70)
 
 *P.S. Click the image to go to our dashboard for further exploration*
 
@@ -223,7 +226,7 @@ The second dashboard is where things get even more exciting. It’s one thing to
 
 For instance, if a student is predicted to struggle in their upcoming WAEC exam and they have low attendance rate, the dashboard might suggest focusing improving their attendance in key subjects. It’s not just about predicting failure; it’s about preventing it by offering actionable solutions.
 
-[![Student Exam Predictions](../../../images/Student_Dashboard_2.png)](https://data-baddies.metabaseapp.com/public/dashboard/e4fbd0e2-1a86-4f9b-b8d5-719736a38446)
+[![Student Exam Predictions](../assets/Student_Dashboard_2.png)](https://data-baddies.metabaseapp.com/public/dashboard/e4fbd0e2-1a86-4f9b-b8d5-719736a38446)
 
 *P.S. Click the image to go to the dashboard for further exploration. In cases where the data for a student has no results. It means the student is not offering that particular course.*
 
@@ -235,7 +238,7 @@ This is important to deliver fresh data and fresh insights to our stakeholders. 
 
 Here’s a screenshot that shows a glimpse of the assets dependencies in our acyclic graph.
 
-![Dagster Graph](<../../../images/dagster graph.png>)
+![Dagster Graph](<../assets/dagster graph.png>)
 
 ## Alert Monitoring
 
@@ -243,9 +246,9 @@ To ensure that we get alerted at everypoint our pipeline fails or succeeds, we i
 
 Below is a screenshot of the email we get everytime an alert succeeds or fails.
 
-![Dagster Succeed Alert](<../../../images/Dagster Succeed Alert.png>)
+![Dagster Succeed Alert](<../assets/Dagster Succeed Alert.png>)
 
-![Dagster Fail Alert](<../../../images/Dagster Fail Alert.png>)
+![Dagster Fail Alert](<../assets/Dagster Fail Alert.png>)
 
 ## Value Generated
 
