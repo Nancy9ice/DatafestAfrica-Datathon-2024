@@ -264,7 +264,7 @@ We used Snowflake, a warehousing system that would power our machine learning pr
 
 - **Precision-Optimized Machine Learning:**
 
-We built a machine learning model that predicts students' performances. We call it Precision-Optimized because in our pipeline, any predictions that have accuracy score of 60% won't be written to our output table in the warehouse.
+We built a machine learning model that predicts students' performances. We call it Precision-Optimized because in our pipeline, any predictions that have accuracy score below 60% won't be written to our output table in the warehouse.
 
 - **Personalized Reporting:**
 
