@@ -24,6 +24,10 @@ The dbt and machine learning projects are wrapped in the dagster orchestration c
 
 You can access the detailed [project documentation here](https://nancy9ice.github.io/DatafestAfrica-Datathon-2024)
 
+ _For iOS: click on show reader in the option for a proper view_ 
+
+ _For Android: click on  desktop site for a proper view_ 
+
 ## How to Build this Project
 
 Clone the github project
